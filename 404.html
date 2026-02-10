@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Alyan Anwar</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #131316;
+      color: #e4e4e7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 600;
+      background: linear-gradient(135deg, #ffffff 0%, #b8c4d4 50%, #8a95a5 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .error-msg {
+      font-size: 1.2rem;
+      color: #a1a1aa;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .error-link {
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #dce4ef;
+      border: 1.5px solid #b8c4d4;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+    }
+    .error-link:hover {
+      background: #dce4ef;
+      color: #131316;
+      box-shadow: 0 4px 20px rgba(184, 196, 212, 0.15), 0 8px 40px rgba(184, 196, 212, 0.15);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-code">404</div>
+  <p class="error-msg">This page doesn't exist — but the rest of my site does.</p>
+  <a href="/" class="error-link">Go Home</a>
+</body>
+</html>
