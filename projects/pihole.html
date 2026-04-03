@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pi-hole DNS Server — Alyan Anwar</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">A.</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="../resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="project-page-hero">
+    <a href="../index.html#projects" class="back-link">&#8592; Back to Projects</a>
+    <h1 class="project-page-title">Pi-hole DNS Server</h1>
+    <p class="project-page-subtitle">
+      Built a network-wide ad and tracker blocker using a Raspberry Pi and custom enclosure — integrated directly into the home network.
+    </p>
+    <div class="project-page-tags">
+      <span>Networking</span>
+      <span>Raspberry Pi</span>
+      <span>DNS</span>
+      <span>Linux</span>
+      <span>Security</span>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <!-- To add photos: drop image files into images/projects/pihole/ and replace placeholder divs -->
+  <section class="project-gallery-section">
+    <p class="section-label">Photos</p>
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Drop photo here
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Drop photo here
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Drop photo here
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="project-content-section">
+    <div class="project-content-inner">
+      <h2>Overview</h2>
+      <p>
+        <!-- Edit this text -->
+        In January 2026, I set up a Pi-hole DNS sinkhole on a Raspberry Pi and integrated it into my home network as the primary DNS server. Pi-hole intercepts DNS queries and blocks known ad-serving and tracking domains before they even load.
+      </p>
+      <p>
+        I also built a custom enclosure for the Pi to keep it clean and protected. The whole thing runs 24/7 and handles DNS for every device on the network — phones, laptops, smart TVs, everything.
+      </p>
+
+      <h2>How It Works</h2>
+      <ul>
+        <!-- Edit this list -->
+        <li>Raspberry Pi acts as the DNS resolver for the entire home network</li>
+        <li>Queries for known ad/tracker domains are blocked at the DNS level</li>
+        <li>Pi-hole dashboard shows real-time stats on blocked queries</li>
+        <li>Custom blocklists added on top of the defaults</li>
+        <li>Static IP assigned so the router always routes DNS through it</li>
+      </ul>
+
+      <h2>What I Learned</h2>
+      <ul>
+        <!-- Edit this list -->
+        <li>DNS fundamentals and how resolvers work</li>
+        <li>Linux server setup and SSH administration</li>
+        <li>Home network configuration (static IPs, router DNS settings)</li>
+        <li>Hands-on Raspberry Pi hardware setup</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section class="project-docs-section">
+    <p class="section-label">Documents</p>
+    <div class="docs-grid">
+      <p class="doc-placeholder">Drop documents into docs/ and add links here.</p>
+    </div>
+  </section>
+
+  <div class="project-footer-nav">
+    <a href="../index.html#projects">&#8592; Back to all projects</a>
+  </div>
+
+  <footer class="footer">
+    <p>Designed &amp; Built by Alyan Anwar</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
