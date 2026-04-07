@@ -621,7 +621,7 @@ em {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -629,7 +629,6 @@ em {
   display: block;
   text-decoration: none;
   color: inherit;
-  grid-column: span 2;
 }
 
 
@@ -860,12 +859,6 @@ em {
 
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-
-  .project-card-link,
-  .project-card-link:nth-child(4),
-  .project-card-link:nth-child(5) {
-    grid-column: 1 / -1;
   }
 
   .about-details {
