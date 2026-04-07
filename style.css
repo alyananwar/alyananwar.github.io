@@ -401,6 +401,9 @@ em {
   color: var(--text-muted);
   transition: all 0.15s ease;
   letter-spacing: 0.04em;
+  display: inline-block;
+  text-decoration: none;
+  cursor: none;
 }
 
 .skill-tag:hover {
