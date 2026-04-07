@@ -7,11 +7,7 @@ const observer = new IntersectionObserver((entries) => {
       const parent = entry.target.parentElement;
       const siblings = Array.from(parent.querySelectorAll('.reveal'));
       const index = siblings.indexOf(entry.target);
-
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, index * 120);
-
+      setTimeout(() => entry.target.classList.add('visible'), index * 120);
       observer.unobserve(entry.target);
     }
   });
@@ -30,33 +26,50 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// Parallax-like fade on hero content
+// Parallax fade on hero
 const heroInner = document.querySelector('.hero-inner');
-
 if (heroInner) {
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     if (scrolled < window.innerHeight) {
-      const opacity = 1 - (scrolled / (window.innerHeight * 0.8));
-      const translate = scrolled * 0.3;
-      heroInner.style.opacity = Math.max(0, opacity);
-      heroInner.style.transform = `translateY(${translate}px)`;
+      heroInner.style.opacity   = Math.max(0, 1 - scrolled / (window.innerHeight * 0.8));
+      heroInner.style.transform = `translateY(${scrolled * 0.3}px)`;
     }
   }, { passive: true });
 }
 
-// ── ASCII Character Grid Background ──────────────────────────────────────────
+// ── Shared cursor state ───────────────────────────────────────────────────────
+let mx = -100, my = -100;
+let cursorHovering = false;
+let trailPoints    = [];  // { x, y, ts }
+
+const TRAIL_MS   = 750;   // how long a point glows (ms)
+const TRAIL_R    = 80;    // influence radius in px
+const TRAIL_R_SQ = TRAIL_R * TRAIL_R;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX;
+  my = e.clientY;
+  trailPoints.push({ x: mx, y: my, ts: performance.now() });
+  if (trailPoints.length > 80) trailPoints.shift();
+}, { passive: true });
+
+// Hover state for color switch (green → red)
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursorHovering = true; });
+  el.addEventListener('mouseleave', () => { cursorHovering = false; });
+});
+
+// ── ASCII Character Grid Background + Cursor Trail ────────────────────────────
 const canvas = document.getElementById('particle-canvas');
 if (canvas) {
-  const ctx = canvas.getContext('2d');
+  const ctx   = canvas.getContext('2d');
   const CHARS = '!"#$%&\'*+,-./:;<=>?@[\\]^_|~§¶•¥€$¢©®™□○◇';
-  const SZ = 14;
+  const SZ    = 14;
   let cols, rows, cells = [];
 
   function resize() {
@@ -78,20 +91,51 @@ if (canvas) {
 
   function tick(ts) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font          = `${SZ - 2}px 'JetBrains Mono', monospace`;
-    ctx.textAlign     = 'left';
-    ctx.textBaseline  = 'top';
+    ctx.font         = `${SZ - 2}px 'JetBrains Mono', monospace`;
+    ctx.textAlign    = 'left';
+    ctx.textBaseline = 'top';
+
+    // Purge expired trail points
+    const now = performance.now();
+    while (trailPoints.length && now - trailPoints[0].ts > TRAIL_MS) {
+      trailPoints.shift();
+    }
 
     for (let i = 0; i < cells.length; i++) {
       const cell = cells[i];
+
+      // Occasionally mutate character
       if (ts > cell.next) {
         cell.char = CHARS[Math.floor(Math.random() * CHARS.length)];
         cell.a    = Math.random() * 0.12 + 0.04;
         cell.next = ts + 2000 + Math.random() * 8000;
       }
-      const c = i % cols;
-      const r = Math.floor(i / cols);
-      ctx.fillStyle = `rgba(160, 160, 160, ${cell.a})`;
+
+      const c  = i % cols;
+      const r  = Math.floor(i / cols);
+      const cx = c * SZ + SZ / 2;
+      const cy = r * SZ + SZ / 2;
+
+      // Find max glow influence from trail
+      let glow = 0;
+      for (const p of trailPoints) {
+        const dx  = cx - p.x;
+        const dy  = cy - p.y;
+        const dSq = dx * dx + dy * dy;
+        if (dSq < TRAIL_R_SQ) {
+          const age     = (now - p.ts) / TRAIL_MS;        // 0 = fresh, 1 = expired
+          const spatial = 1 - Math.sqrt(dSq) / TRAIL_R;   // 1 = on point, 0 = edge
+          glow = Math.max(glow, spatial * (1 - age * age)); // squared falloff feels smoother
+        }
+      }
+
+      if (glow > 0.05) {
+        const col = cursorHovering ? '255, 59, 59' : '57, 255, 20';
+        ctx.fillStyle = `rgba(${col}, ${Math.min(glow * 0.9, 0.85)})`;
+      } else {
+        ctx.fillStyle = `rgba(160, 160, 160, ${cell.a})`;
+      }
+
       ctx.fillText(cell.char, c * SZ, r * SZ);
     }
 
@@ -103,48 +147,21 @@ if (canvas) {
   requestAnimationFrame(tick);
 }
 
-// ── Custom Cursor (dot + ring) ────────────────────────────────────────────────
-const dot  = document.createElement('div');
-dot.className  = 'cursor-dot';
-const ring = document.createElement('div');
-ring.className = 'cursor-ring';
+// ── Custom Cursor (dot only — ring replaced by ASCII trail) ──────────────────
+const dot = document.createElement('div');
+dot.className = 'cursor-dot';
 document.body.appendChild(dot);
-document.body.appendChild(ring);
-
-let mx = -100, my = -100;
-let rx = -100, ry = -100;
-dot.style.opacity  = '0';
-ring.style.opacity = '0';
+dot.style.opacity = '0';
 
 document.addEventListener('mousemove', e => {
-  mx = e.clientX;
-  my = e.clientY;
-  dot.style.opacity  = '1';
-  ring.style.opacity = '1';
+  dot.style.left    = e.clientX + 'px';
+  dot.style.top     = e.clientY + 'px';
+  dot.style.opacity = '1';
 }, { passive: true });
 
 document.addEventListener('mouseleave', () => {
-  dot.style.opacity  = '0';
-  ring.style.opacity = '0';
+  dot.style.opacity = '0';
 });
-
-// Expand ring on interactive elements
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('cursor-hover'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('cursor-hover'));
-});
-
-(function cursorLoop() {
-  dot.style.left  = mx + 'px';
-  dot.style.top   = my + 'px';
-
-  rx += (mx - rx) * 0.1;
-  ry += (my - ry) * 0.1;
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
-
-  requestAnimationFrame(cursorLoop);
-})();
 
 // ── Magnetic hover on skill tags ──────────────────────────────────────────────
 document.querySelectorAll('.skill-tag').forEach(tag => {
