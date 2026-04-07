@@ -1190,12 +1190,14 @@ em {
 
 /* ========== Particle Canvas ========== */
 #particle-canvas {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 3;
+  opacity: 0.22;
 }
 
 /* ========== Cursor Spotlight ========== */
@@ -1207,7 +1209,7 @@ em {
   background: radial-gradient(circle, rgba(184, 196, 212, 0.055) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 4;
   will-change: left, top;
   transition: opacity 0.3s ease;
 }

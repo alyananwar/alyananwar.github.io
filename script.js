@@ -39,17 +39,18 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // Parallax-like effect on hero content
 const heroContent = document.querySelector('.hero-content');
-const heroGlow = document.querySelector('.hero::before');
 
-window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY;
-  if (scrolled < window.innerHeight) {
-    const opacity = 1 - (scrolled / (window.innerHeight * 0.8));
-    const translate = scrolled * 0.3;
-    heroContent.style.opacity = Math.max(0, opacity);
-    heroContent.style.transform = `translateY(${translate}px)`;
-  }
-}, { passive: true });
+if (heroContent) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    if (scrolled < window.innerHeight) {
+      const opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+      const translate = scrolled * 0.3;
+      heroContent.style.opacity = Math.max(0, opacity);
+      heroContent.style.transform = `translateY(${translate}px)`;
+    }
+  }, { passive: true });
+}
 
 // ── Particle Network (Hero) ──────────────────────────────────────────────────
 const canvas = document.getElementById('particle-canvas');
@@ -64,8 +65,8 @@ if (canvas) {
   let mouse = { x: null, y: null };
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
 
   class Particle {
@@ -128,24 +129,12 @@ if (canvas) {
     rafId = requestAnimationFrame(tick);
   }
 
-  // Only animate when hero is visible — save CPU when scrolled away
-  const heroSection = document.querySelector('.hero');
-  new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) {
-      if (!rafId) rafId = requestAnimationFrame(tick);
-    } else {
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    }
-  }).observe(heroSection);
-
-  // Track mouse relative to canvas
-  heroSection.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-  heroSection.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+  // Track mouse across the whole page (canvas is fixed, so client coords = canvas coords)
+  document.addEventListener('mousemove', e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
 
   window.addEventListener('resize', () => {
     resize();
