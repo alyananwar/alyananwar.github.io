@@ -69,7 +69,7 @@ if (canvas) {
       for (let c = 0; c < cols; c++) {
         cells.push({
           char: CHARS[Math.floor(Math.random() * CHARS.length)],
-          a:    Math.random() * 0.04 + 0.01,
+          a:    Math.random() * 0.12 + 0.04,
           next: Math.random() * 5000
         });
       }
@@ -86,7 +86,7 @@ if (canvas) {
       const cell = cells[i];
       if (ts > cell.next) {
         cell.char = CHARS[Math.floor(Math.random() * CHARS.length)];
-        cell.a    = Math.random() * 0.04 + 0.01;
+        cell.a    = Math.random() * 0.12 + 0.04;
         cell.next = ts + 2000 + Math.random() * 8000;
       }
       const c = i % cols;
