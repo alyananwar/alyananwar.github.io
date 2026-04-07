@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TigerTrack — Alyan Anwar</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">A.</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="../resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="project-page-hero">
+    <a href="../index.html#projects" class="back-link">&#8592; Back to Projects</a>
+    <h1 class="project-page-title">TigerTrack</h1>
+    <p class="project-page-subtitle">
+      AI-powered course planner for University of the Pacific students — built in 11 hours at PacificHacks with a 3-person team.
+    </p>
+    <div class="project-page-tags">
+      <span>Next.js</span>
+      <span>TypeScript</span>
+      <span>Tailwind CSS</span>
+      <span>Firebase</span>
+      <span>Clerk</span>
+      <span>Groq AI</span>
+      <span>Vercel</span>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="project-gallery-section">
+    <p class="section-label">Screenshots</p>
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/TigerTrack%20_%20UOP%20Course%20Planner.JPEG" alt="TigerTrack — main course planner view">
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/TigerTrack%20_%20UOP%20Course%20Planner%20%C2%B7%202.40pm%20%C2%B7%2004-04.JPEG" alt="TigerTrack — course plan board">
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/TigerTrack%20_%20UOP%20Course%20Planner%20%C2%B7%202.40pm%20%C2%B7%2004-04%20%281%29.JPEG" alt="TigerTrack — degree progress view">
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/TigerTrack%20_%20UOP%20Course%20Planner%20%C2%B7%202.41pm%20%C2%B7%2004-04.JPEG" alt="TigerTrack — AI scheduler">
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/1775534858630.jpg" alt="TigerTrack — course explorer">
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/1775534859051.jpg" alt="TigerTrack — Tiger Advisor chatbot">
+      </div>
+
+      <div class="gallery-item">
+        <img src="../images/projects/TigerTrack/1775534859732.jpg" alt="TigerTrack — DegreeWorks integration">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
+  <!-- Demo Video -->
+  <section class="project-gallery-section">
+    <p class="section-label">Demo</p>
+    <div style="max-width: 900px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border);">
+      <video
+        controls
+        style="width: 100%; display: block; background: #000;"
+        preload="metadata"
+      >
+        <source src="../images/projects/TigerTrack/Arc%20-%20TigerTrack%20%E2%80%94%20UOP%20Course%20Planner%20-%204%20April%202026.MOV" type="video/mp4">
+        Your browser doesn't support this video format. Try opening in Safari.
+      </video>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="project-content-section">
+    <div class="project-content-inner">
+      <h2>Overview</h2>
+      <p>
+        TigerTrack is an AI-powered academic planning workspace built for University of the Pacific students. We built it at PacificHacks — UOP's annual hackathon — in 11 hours as a 3-person team.
+      </p>
+      <p>
+        The problem it solves: UOP students have to jump between DegreeWorks (to see what they've completed), College Scheduler (to search for courses), and their own notes just to answer basic questions like "what can I take next semester?" TigerTrack puts all of that into one place — with an AI layer on top.
+      </p>
+      <p>
+        The app shipped with 988 real UOP catalog entries across 77 subjects, live plan persistence per user, a prerequisite-aware algorithmic scheduler, and an AI chatbot that knows your actual academic profile.
+      </p>
+
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Course Plan</strong> — Semester-by-semester drag-and-drop planning board. Add and remove courses, move them between semesters, and see prerequisite conflicts highlighted in real time. Plan persists to Firebase per user account.</li>
+        <li><strong>DegreeWorks View</strong> — Full audit dashboard: completed requirements, in-progress courses, GPA, units applied, and requirement block status — all pulled from real DegreeWorks data.</li>
+        <li><strong>Degree Progress</strong> — Live progress bars for Core CS, Mathematics, GE, and Science requirements, powered by actual DegreeWorks data.</li>
+        <li><strong>Explore</strong> — Browse and search 988 real UOP courses with fuzzy search, subject filtering, and credit range filtering.</li>
+        <li><strong>AI Scheduler</strong> — Automatically generates a personalized multi-semester graduation plan based on your outstanding DegreeWorks requirements, completed courses, and target credits per semester. Uses a custom prerequisite-aware topological scheduling algorithm — no external AI call.</li>
+        <li><strong>Tiger Advisor</strong> — Floating AI chat assistant (powered by Groq's llama-3.3-70b-versatile) that knows your full academic profile. Answers questions about prerequisites, graduation requirements, and what to take next, all grounded in your actual plan.</li>
+        <li><strong>Export</strong> — Download your plan as a PDF or export to Google Calendar / Apple Calendar as a .ics file.</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <th style="text-align: left; padding: 0.6rem 1rem 0.6rem 0; color: var(--accent-light);">Tool</th>
+              <th style="text-align: left; padding: 0.6rem 0; color: var(--accent-light);">Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Next.js (App Router, TypeScript)</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">Framework — routing, pages, serverless API endpoints</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Tailwind CSS v4</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">All styling and layout</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Clerk</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">User authentication and session management</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Firebase Firestore</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">Stores each student's course plan, keyed by user ID</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Groq API (llama-3.3-70b-versatile)</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">Powers the Tiger Advisor AI chatbot</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Custom Algorithmic Scheduler</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">Prerequisite-aware topological scheduling in TypeScript — no external AI</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border);">
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">@dnd-kit</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">Drag-and-drop in the course plan board</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.65rem 1rem 0.65rem 0; color: var(--accent);">Vercel</td>
+              <td style="padding: 0.65rem 0; color: var(--text-light);">Hosting with automatic deploys on every GitHub push</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How We Built It</h2>
+      <p>
+        The hackathon was 11 hours. I wrote the build guide ahead of time to map out the data strategy, tech stack, and hour-by-hour plan before we even opened our laptops. The most critical step was data collection — we used real DegreeWorks audit data and scraped course information from UOP's College Scheduler portal to populate the app with actual content.
+      </p>
+      <ul>
+        <li><strong>Hours 1–2:</strong> Project setup, MyPacific-style shell layout, Clerk auth, Firebase connection</li>
+        <li><strong>Hours 3–4:</strong> Core Plan page — SemesterCard, CourseCard, drag-and-drop with dnd-kit, Firebase persistence</li>
+        <li><strong>Hour 5:</strong> Explore page with fuzzy search across 988 courses using Fuse.js</li>
+        <li><strong>Hours 6–7:</strong> AI Scheduler — custom topological scheduling algorithm, Gemini → Groq switch mid-hackathon when we hit Gemini's free tier limits</li>
+        <li><strong>Hour 8:</strong> Tiger Advisor chatbot, DegreeWorks data integration, prerequisite conflict highlighting</li>
+        <li><strong>Hours 9–11:</strong> Export features (PDF + .ics), demo prep, Vercel deploy</li>
+      </ul>
+      <p>
+        The most interesting engineering challenge was the AI Scheduler. We originally planned to use Gemini to generate schedules, but the prompt → parse → validate loop was fragile. We ended up writing a deterministic topological scheduling algorithm in TypeScript instead — it reads outstanding DegreeWorks requirements, resolves prerequisite chains, and distributes courses across semesters based on the student's target credit load. More reliable, faster, and no API call needed.
+      </p>
+      <p>
+        The Tiger Advisor chatbot switched from Gemini to Groq mid-hackathon after hitting the free tier quota. Groq's llama-3.3-70b was faster and handled longer context better for the academic planning prompts.
+      </p>
+
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Next.js App Router and serverless API routes in a production deployment</li>
+        <li>Clerk for auth — drop-in login flow that took under an hour to wire up</li>
+        <li>Firebase Firestore real-time database design and security rules</li>
+        <li>Groq API and prompt engineering for context-aware AI responses</li>
+        <li>Topological sorting as a practical scheduling algorithm — not just a CS concept</li>
+        <li>How to scope a hackathon project — what to cut, what to keep, and how to build for demo impact</li>
+        <li>Scraping and structuring real institutional data (DegreeWorks, College Scheduler)</li>
+      </ul>
+
+      <h2>Team</h2>
+      <ul>
+        <li>Alyan Anwar</li>
+        <li>Sameer Salehi</li>
+        <li>Tobias Follett</li>
+      </ul>
+      <p>University of the Pacific &mdash; PacificHacks, April 2026</p>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <section class="project-docs-section">
+    <p class="section-label">Links</p>
+    <div class="docs-grid">
+      <a href="https://github.com/alyananwar/TigerTrack" target="_blank" rel="noopener" class="doc-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub — alyananwar/TigerTrack
+      </a>
+    </div>
+  </section>
+
+  <div class="project-footer-nav">
+    <a href="../index.html#projects">&#8592; Back to all projects</a>
+  </div>
+
+  <footer class="footer">
+    <p>Designed &amp; Built by Alyan Anwar</p>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
+  </script>
+</body>
+</html>
