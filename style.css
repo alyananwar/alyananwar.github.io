@@ -632,9 +632,6 @@ em {
   grid-column: span 2;
 }
 
-/* Center the last 2 cards (staggered row) */
-.project-card-link:nth-child(4) { grid-column: 2 / span 2; }
-.project-card-link:nth-child(5) { grid-column: 4 / span 2; }
 
 .project-card {
   height: 100%;
