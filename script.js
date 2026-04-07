@@ -4,7 +4,6 @@ const revealElements = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Stagger siblings within the same parent
       const parent = entry.target.parentElement;
       const siblings = Array.from(parent.querySelectorAll('.reveal'));
       const index = siblings.indexOf(entry.target);
@@ -20,7 +19,7 @@ const observer = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => observer.observe(el));
 
-// Nav border + subtle shadow on scroll
+// Nav border on scroll
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
@@ -37,141 +36,124 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Parallax-like effect on hero content
-const heroContent = document.querySelector('.hero-content');
+// Parallax-like fade on hero content
+const heroInner = document.querySelector('.hero-inner');
 
-if (heroContent) {
+if (heroInner) {
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     if (scrolled < window.innerHeight) {
       const opacity = 1 - (scrolled / (window.innerHeight * 0.8));
       const translate = scrolled * 0.3;
-      heroContent.style.opacity = Math.max(0, opacity);
-      heroContent.style.transform = `translateY(${translate}px)`;
+      heroInner.style.opacity = Math.max(0, opacity);
+      heroInner.style.transform = `translateY(${translate}px)`;
     }
   }, { passive: true });
 }
 
-// ── Particle Network (Hero) ──────────────────────────────────────────────────
+// ── ASCII Character Grid Background ──────────────────────────────────────────
 const canvas = document.getElementById('particle-canvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
-  const COUNT = 65;
-  const CONNECT_DIST = 140;
-  const REPEL_DIST = 110;
-  const ACCENT = '184, 196, 212';
-  let particles = [];
-  let rafId = null;
-  let mouse = { x: null, y: null };
+  const CHARS = '!"#$%&\'*+,-./:;<=>?@[\\]^_|~§¶•¥€$¢©®™□○◇';
+  const SZ = 14;
+  let cols, rows, cells = [];
 
   function resize() {
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
-  }
-
-  class Particle {
-    constructor() { this.init(); }
-    init() {
-      this.x  = Math.random() * canvas.width;
-      this.y  = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.35;
-      this.vy = (Math.random() - 0.5) * 0.35;
-      this.r  = Math.random() * 1.5 + 0.5;
-      this.a  = Math.random() * 0.45 + 0.15;
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0) this.x = canvas.width;
-      if (this.x > canvas.width)  this.x = 0;
-      if (this.y < 0) this.y = canvas.height;
-      if (this.y > canvas.height) this.y = 0;
-
-      if (mouse.x !== null) {
-        const dx = this.x - mouse.x;
-        const dy = this.y - mouse.y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < REPEL_DIST) {
-          const f = (REPEL_DIST - d) / REPEL_DIST;
-          this.x += (dx / d) * f * 2.5;
-          this.y += (dy / d) * f * 2.5;
-        }
+    cols = Math.ceil(canvas.width  / SZ) + 1;
+    rows = Math.ceil(canvas.height / SZ) + 1;
+    cells = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        cells.push({
+          char: CHARS[Math.floor(Math.random() * CHARS.length)],
+          a:    Math.random() * 0.04 + 0.01,
+          next: Math.random() * 5000
+        });
       }
     }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${ACCENT}, ${this.a})`;
-      ctx.fill();
-    }
   }
 
-  function tick() {
+  function tick(ts) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font          = `${SZ - 2}px 'JetBrains Mono', monospace`;
+    ctx.textAlign     = 'left';
+    ctx.textBaseline  = 'top';
 
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < CONNECT_DIST) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(${ACCENT}, ${(1 - d / CONNECT_DIST) * 0.25})`;
-          ctx.lineWidth = 0.6;
-          ctx.stroke();
-        }
+    for (let i = 0; i < cells.length; i++) {
+      const cell = cells[i];
+      if (ts > cell.next) {
+        cell.char = CHARS[Math.floor(Math.random() * CHARS.length)];
+        cell.a    = Math.random() * 0.04 + 0.01;
+        cell.next = ts + 2000 + Math.random() * 8000;
       }
+      const c = i % cols;
+      const r = Math.floor(i / cols);
+      ctx.fillStyle = `rgba(57, 255, 20, ${cell.a})`;
+      ctx.fillText(cell.char, c * SZ, r * SZ);
     }
 
-    particles.forEach(p => { p.update(); p.draw(); });
-    rafId = requestAnimationFrame(tick);
+    requestAnimationFrame(tick);
   }
 
-  // Track mouse across the whole page (canvas is fixed, so client coords = canvas coords)
-  document.addEventListener('mousemove', e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  }, { passive: true });
-  document.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
-
-  window.addEventListener('resize', () => {
-    resize();
-    particles.forEach(p => p.init());
-  }, { passive: true });
-
+  window.addEventListener('resize', resize, { passive: true });
   resize();
-  particles = Array.from({ length: COUNT }, () => new Particle());
-  rafId = requestAnimationFrame(tick);
+  requestAnimationFrame(tick);
 }
 
-// ── Cursor Spotlight ──────────────────────────────────────────────────────────
-const spotlight = document.createElement('div');
-spotlight.className = 'cursor-spotlight';
-document.body.appendChild(spotlight);
-spotlight.style.opacity = '0';
+// ── Custom Cursor (dot + ring) ────────────────────────────────────────────────
+const dot  = document.createElement('div');
+dot.className  = 'cursor-dot';
+const ring = document.createElement('div');
+ring.className = 'cursor-ring';
+document.body.appendChild(dot);
+document.body.appendChild(ring);
+
+let mx = -100, my = -100;
+let rx = -100, ry = -100;
+dot.style.opacity  = '0';
+ring.style.opacity = '0';
 
 document.addEventListener('mousemove', e => {
-  spotlight.style.left    = e.clientX + 'px';
-  spotlight.style.top     = e.clientY + 'px';
-  spotlight.style.opacity = '1';
+  mx = e.clientX;
+  my = e.clientY;
+  dot.style.opacity  = '1';
+  ring.style.opacity = '1';
 }, { passive: true });
 
 document.addEventListener('mouseleave', () => {
-  spotlight.style.opacity = '0';
+  dot.style.opacity  = '0';
+  ring.style.opacity = '0';
 });
 
-// ── Magnetic hover effect on skill tags ──────────────────────────────────────
-// Magnetic hover effect on skill tags
+// Expand ring on interactive elements
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('cursor-hover'));
+});
+
+(function cursorLoop() {
+  dot.style.left  = mx + 'px';
+  dot.style.top   = my + 'px';
+
+  rx += (mx - rx) * 0.1;
+  ry += (my - ry) * 0.1;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+
+  requestAnimationFrame(cursorLoop);
+})();
+
+// ── Magnetic hover on skill tags ──────────────────────────────────────────────
 document.querySelectorAll('.skill-tag').forEach(tag => {
   tag.addEventListener('mousemove', (e) => {
     const rect = tag.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
+    const x = e.clientX - rect.left - rect.width  / 2;
+    const y = e.clientY - rect.top  - rect.height / 2;
     tag.style.transform = `translateY(-2px) translate(${x * 0.1}px, ${y * 0.1}px)`;
   });
-
   tag.addEventListener('mouseleave', () => {
     tag.style.transform = '';
   });
