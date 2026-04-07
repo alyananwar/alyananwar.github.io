@@ -261,10 +261,10 @@ em {
 
 .ascii-portrait-box {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  line-height: 1.3;
+  font-size: 0.78rem;
+  line-height: 1.25;
   color: var(--green);
-  opacity: 0.5;
+  opacity: 0.55;
   white-space: pre;
   margin: 0;
   padding: 0;
@@ -758,7 +758,7 @@ em {
   }
   .hero-meta { align-items: center; }
   .ascii-portrait-box {
-    font-size: 0.42rem;
+    font-size: 0.38rem;
     padding: 0;
   }
   .hero-scroll-indicator { display: none; }
