@@ -69,7 +69,7 @@ em {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2.5rem;
-  background: rgba(8, 8, 8, 0.94);
+  background: rgba(8, 8, 8, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
@@ -262,8 +262,8 @@ em {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   line-height: 1.25;
-  color: var(--green);
-  opacity: 0.55;
+  color: #686868;
+  opacity: 0.7;
   white-space: pre;
   margin: 0;
   padding: 0;
@@ -272,7 +272,7 @@ em {
 }
 
 .ascii-portrait-box:hover {
-  opacity: 0.85;
+  opacity: 1;
 }
 
 /* Scroll indicator */
@@ -340,7 +340,7 @@ em {
 
 /* ========== About ========== */
 .about {
-  background: var(--bg-alt);
+  background: transparent;
 }
 
 .about-content {
@@ -440,7 +440,7 @@ em {
 
 /* ========== Experience Timeline ========== */
 .experience {
-  background: var(--bg);
+  background: transparent;
 }
 
 .timeline {
@@ -533,7 +533,7 @@ em {
 
 /* ========== Projects ========== */
 .projects {
-  background: var(--bg-alt);
+  background: transparent;
 }
 
 .projects-grid {
@@ -642,7 +642,7 @@ em {
 
 /* ========== Contact ========== */
 .contact {
-  background: var(--bg);
+  background: transparent;
   text-align: center;
 }
 
@@ -834,7 +834,7 @@ em {
 /* Gallery */
 .project-gallery-section {
   padding: 4rem 2rem;
-  background: var(--bg-alt);
+  background: transparent;
 }
 
 .project-gallery-section .section-label {
@@ -900,7 +900,7 @@ em {
 /* Content */
 .project-content-section {
   padding: 4rem 2rem;
-  background: var(--bg);
+  background: transparent;
 }
 
 .project-content-inner {
@@ -988,7 +988,7 @@ em {
 /* Docs */
 .project-docs-section {
   padding: 3rem 2rem 4rem;
-  background: var(--bg-alt);
+  background: transparent;
 }
 
 .project-docs-section .section-label {
@@ -1046,7 +1046,7 @@ em {
   padding: 2rem;
   text-align: center;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: transparent;
 }
 
 .project-footer-nav a {
