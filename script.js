@@ -91,7 +91,7 @@ if (canvas) {
       }
       const c = i % cols;
       const r = Math.floor(i / cols);
-      ctx.fillStyle = `rgba(57, 255, 20, ${cell.a})`;
+      ctx.fillStyle = `rgba(160, 160, 160, ${cell.a})`;
       ctx.fillText(cell.char, c * SZ, r * SZ);
     }
 
