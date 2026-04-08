@@ -260,8 +260,8 @@ em {
   grid-template-columns: 1.4fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 3px;
-  width: 240px;
-  height: 260px;
+  width: 480px;
+  height: 460px;
 }
 
 .ascii-panel {
@@ -780,8 +780,8 @@ em {
   .hero-meta { align-items: center; }
   .ascii-collage {
     width: 100%;
-    max-width: 240px;
-    height: 180px;
+    max-width: 340px;
+    height: 280px;
     margin: 0 auto;
   }
   .hero-scroll-indicator { display: none; }
