@@ -268,6 +268,7 @@ em {
   overflow: hidden;
   border: 1px solid #222;
   background: transparent;
+  position: relative;
 }
 
 .ascii-panel--large {
@@ -284,10 +285,39 @@ em {
   mix-blend-mode: screen;
   opacity: 0.65;
   transition: opacity 0.3s ease;
+  clip-path: inset(0 0 100% 0);
+  animation: asciiReveal 1s steps(50, end) forwards 0.4s;
 }
 
 .ascii-panel:hover img {
   opacity: 0.9;
+}
+
+/* Scan line sweeps down as image generates */
+.ascii-panel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green), 0 0 2px var(--green);
+  opacity: 0;
+  animation: asciiScanLine 1s linear forwards 0.4s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes asciiReveal {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0% 0); }
+}
+
+@keyframes asciiScanLine {
+  0%   { top: 0%;   opacity: 1; }
+  96%  { top: 100%; opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
 }
 
 /* Scroll indicator */
