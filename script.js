@@ -1,3 +1,44 @@
+// Scroll progress bar
+const progressBar = document.createElement('div');
+progressBar.className = 'scroll-progress';
+document.body.appendChild(progressBar);
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  progressBar.style.width = pct + '%';
+}, { passive: true });
+
+// Typing animation for hero name
+const nameEl = document.querySelector('.hero-name-text');
+if (nameEl) {
+  const text = 'ALYAN_ANWAR';
+  let i = 0;
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      nameEl.textContent = text.slice(0, ++i);
+      if (i === text.length) clearInterval(interval);
+    }, 80);
+  }, 400);
+}
+
+// Copy email to clipboard
+const emailBtn = document.getElementById('email-copy-btn');
+if (emailBtn) {
+  emailBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText('a_anwar5@u.pacific.edu').then(() => {
+      let toast = document.querySelector('.toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = 'email_copied_to_clipboard';
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    });
+  });
+}
+
 // Scroll reveal with staggered timing
 const revealElements = document.querySelectorAll('.reveal');
 
