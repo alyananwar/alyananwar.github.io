@@ -260,8 +260,8 @@ em {
   grid-template-columns: 1.4fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 3px;
-  width: 480px;
-  height: 460px;
+  width: 560px;
+  height: 540px;
 }
 
 .ascii-panel {
@@ -286,7 +286,7 @@ em {
   opacity: 0.65;
   transition: opacity 0.3s ease;
   clip-path: inset(0 0 100% 0);
-  animation: asciiReveal 1s steps(50, end) forwards 0.4s;
+  animation: asciiReveal 2.8s steps(50, end) forwards 0.4s;
 }
 
 .ascii-panel:hover img {
@@ -304,7 +304,7 @@ em {
   background: var(--green);
   box-shadow: 0 0 6px var(--green), 0 0 2px var(--green);
   opacity: 0;
-  animation: asciiScanLine 1s linear forwards 0.4s;
+  animation: asciiScanLine 2.8s linear forwards 0.4s;
   pointer-events: none;
   z-index: 2;
 }
