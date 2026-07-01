@@ -1,130 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pi-hole DNS Server — Alyan Anwar</title>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <canvas id="particle-canvas"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pi-hole DNS Server — Alyan Anwar</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
 
-  <nav class="nav">
-    <a href="../index.html" class="nav-logo">A.</a>
-    <div class="nav-links">
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#experience">Experience</a>
-      <a href="../index.html#projects">Projects</a>
-      <a href="../index.html#contact">Contact</a>
-      <a href="../resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="project-page-hero">
-    <a href="../index.html#projects" class="back-link">&#8592; Back to Projects</a>
-    <h1 class="project-page-title">Pi-hole DNS Server</h1>
-    <p class="project-page-subtitle">
-      Built a network-wide ad and tracker blocker using a Raspberry Pi and custom enclosure — integrated directly into the home network.
-    </p>
-    <div class="project-page-tags">
-      <span>Networking</span>
-      <span>Raspberry Pi</span>
-      <span>DNS</span>
-      <span>Linux</span>
-      <span>Security</span>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="project-gallery-section">
-    <p class="section-label">Photos</p>
-    <div class="gallery-grid">
-
-      <div class="gallery-item">
-        <img src="../images/projects/pihole/raspberry-pi.jpg" alt="Raspberry Pi with custom enclosure">
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">A.</a>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" target="_blank" class="nav-resume-btn"
+          >Resume</a
+        >
       </div>
+    </nav>
 
-      <div class="gallery-item">
-        <img src="../images/projects/pihole/dashboard.png" alt="Pi-hole dashboard — 347,087 domains blocked">
+    <!-- Hero -->
+    <section class="project-page-hero">
+      <a href="../index.html#projects" class="back-link"
+        >&#8592; Back to Projects</a
+      >
+      <h1 class="project-page-title">Pi-hole DNS Server</h1>
+      <p class="project-page-subtitle">
+        Built a network-wide ad and tracker blocker using a Raspberry Pi and
+        custom enclosure — integrated directly into the home network.
+      </p>
+      <div class="project-page-tags">
+        <span>Networking</span>
+        <span>Raspberry Pi</span>
+        <span>DNS</span>
+        <span>Linux</span>
+        <span>Security</span>
       </div>
+    </section>
 
+    <!-- Gallery -->
+    <section class="project-gallery-section">
+      <p class="section-label">Photos</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img
+            src="../images/projects/pihole/raspberry-pi.jpg"
+            alt="Raspberry Pi with custom enclosure"
+          />
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="../images/projects/pihole/dashboard.png"
+            alt="Pi-hole dashboard — 347,087 domains blocked"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <img src="" alt="" id="lightbox-img" />
     </div>
-  </section>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightbox-close">&times;</button>
-    <img src="" alt="" id="lightbox-img">
-  </div>
+    <!-- Overview -->
+    <section class="project-content-section">
+      <div class="project-content-inner">
+        <h2>Overview</h2>
+        <p>
+          <!-- Edit this text -->
+          In January 2026, I set up a Pi-hole DNS sinkhole on a Raspberry Pi and
+          integrated it into my home network as the primary DNS server. Pi-hole
+          intercepts DNS queries and blocks known ad-serving and tracking
+          domains before they even load.
+        </p>
+        <p>
+          I also built a custom enclosure for the Pi to keep it clean and
+          protected. The whole thing runs 24/7 and handles DNS for every device
+          on the network — phones, laptops, smart TVs, everything.
+        </p>
 
-  <!-- Overview -->
-  <section class="project-content-section">
-    <div class="project-content-inner">
-      <h2>Overview</h2>
-      <p>
-        <!-- Edit this text -->
-        In January 2026, I set up a Pi-hole DNS sinkhole on a Raspberry Pi and integrated it into my home network as the primary DNS server. Pi-hole intercepts DNS queries and blocks known ad-serving and tracking domains before they even load.
-      </p>
-      <p>
-        I also built a custom enclosure for the Pi to keep it clean and protected. The whole thing runs 24/7 and handles DNS for every device on the network — phones, laptops, smart TVs, everything.
-      </p>
+        <h2>How It Works</h2>
+        <ul>
+          <!-- Edit this list -->
+          <li>
+            Raspberry Pi acts as the DNS resolver for the entire home network
+          </li>
+          <li>
+            Queries for known ad/tracker domains are blocked at the DNS level
+          </li>
+          <li>Pi-hole dashboard shows real-time stats on blocked queries</li>
+          <li>Custom blocklists added on top of the defaults</li>
+          <li>Static IP assigned so the router always routes DNS through it</li>
+        </ul>
 
-      <h2>How It Works</h2>
-      <ul>
-        <!-- Edit this list -->
-        <li>Raspberry Pi acts as the DNS resolver for the entire home network</li>
-        <li>Queries for known ad/tracker domains are blocked at the DNS level</li>
-        <li>Pi-hole dashboard shows real-time stats on blocked queries</li>
-        <li>Custom blocklists added on top of the defaults</li>
-        <li>Static IP assigned so the router always routes DNS through it</li>
-      </ul>
+        <h2>What I Learned</h2>
+        <ul>
+          <!-- Edit this list -->
+          <li>DNS fundamentals and how resolvers work</li>
+          <li>Linux server setup and SSH administration</li>
+          <li>Home network configuration (static IPs, router DNS settings)</li>
+          <li>Hands-on Raspberry Pi hardware setup</li>
+        </ul>
+      </div>
+    </section>
 
-      <h2>What I Learned</h2>
-      <ul>
-        <!-- Edit this list -->
-        <li>DNS fundamentals and how resolvers work</li>
-        <li>Linux server setup and SSH administration</li>
-        <li>Home network configuration (static IPs, router DNS settings)</li>
-        <li>Hands-on Raspberry Pi hardware setup</li>
-      </ul>
+    <!-- Documents -->
+    <section class="project-docs-section">
+      <p class="section-label">Documents</p>
+      <div class="docs-grid">
+        <p class="doc-placeholder">
+          Drop documents into docs/ and add links here.
+        </p>
+      </div>
+    </section>
+
+    <div class="project-footer-nav">
+      <a href="../index.html#projects">&#8592; Back to all projects</a>
     </div>
-  </section>
 
-  <!-- Documents -->
-  <section class="project-docs-section">
-    <p class="section-label">Documents</p>
-    <div class="docs-grid">
-      <p class="doc-placeholder">Drop documents into docs/ and add links here.</p>
-    </div>
-  </section>
+    <footer class="footer">
+      <p>Designed &amp; Built by Alyan Anwar</p>
+    </footer>
 
-  <div class="project-footer-nav">
-    <a href="../index.html#projects">&#8592; Back to all projects</a>
-  </div>
-
-  <footer class="footer">
-    <p>Designed &amp; Built by Alyan Anwar</p>
-  </footer>
-
-  <script src="../script.js"></script>
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
+    <script src="../script.js"></script>
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      document.querySelectorAll(".gallery-item img").forEach((img) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add("active");
+        });
       });
-    });
-    document.getElementById('lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
-    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('active'); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
-  </script>
-</body>
+      document
+        .getElementById("lightbox-close")
+        .addEventListener("click", () => lightbox.classList.remove("active"));
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) lightbox.classList.remove("active");
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") lightbox.classList.remove("active");
+      });
+    </script>
+  </body>
 </html>

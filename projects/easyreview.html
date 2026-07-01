@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EasyReview — Alyan Anwar</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">A.</a>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" target="_blank" class="nav-resume-btn"
+          >Resume</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="project-page-hero">
+      <a href="../index.html#projects" class="back-link"
+        >&#8592; Back to Projects</a
+      >
+      <h1 class="project-page-title">EasyReview — Review Automation SaaS</h1>
+      <p class="project-page-subtitle">
+        A full-stack automation tool that sends SMS review requests off
+        QuickBooks data — replacing a paid SaaS product at near-zero cost for a
+        local business.
+      </p>
+      <div class="project-page-tags">
+        <span>Next.js</span>
+        <span>Supabase</span>
+        <span>QuickBooks API</span>
+        <span>Playwright</span>
+        <span>Automation</span>
+      </div>
+      <div class="project-page-links">
+        <a
+          href="https://github.com/alyananwar/EasyReview"
+          target="_blank"
+          rel="noopener"
+          class="contact-btn"
+          >View on GitHub</a
+        >
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="project-content-section">
+      <div class="project-content-inner">
+        <h2>Overview</h2>
+        <p>
+          EasyReview started from a real problem: a local business was paying
+          monthly for a SaaS product that did one thing — text customers asking
+          for a Google review after a job. I built a full-stack version that
+          does the same thing at near-zero cost by pulling straight from their
+          QuickBooks data.
+        </p>
+        <p>
+          It integrates the QuickBooks API to know who was just invoiced, then
+          automatically sends SMS review requests on a schedule. In production
+          it sends over 300 messages a month with no manual steps.
+        </p>
+
+        <h2>How It Works</h2>
+        <ul>
+          <li>
+            QuickBooks API integration pulls recent customer and invoice data
+          </li>
+          <li>
+            Supabase (PostgreSQL) backend stores customers and message state
+          </li>
+          <li>Next.js front end for setup and monitoring</li>
+          <li>
+            Playwright browser automation handles the steps without a native API
+          </li>
+          <li>
+            Cron-based schedule fires 300+ outbound messages a month, unattended
+          </li>
+        </ul>
+
+        <h2>What I Learned</h2>
+        <ul>
+          <li>
+            Integrating a real third-party business API (QuickBooks OAuth + data
+            model)
+          </li>
+          <li>Building reliable, unattended automation with Playwright</li>
+          <li>
+            Designing a Supabase schema around a recurring outbound pipeline
+          </li>
+          <li>Shipping something a real business depends on day to day</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="project-footer-nav">
+      <a href="../index.html#projects">&#8592; Back to all projects</a>
+    </div>
+
+    <footer class="footer">
+      <p>Designed &amp; Built by Alyan Anwar</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberPartner — Alyan Anwar</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">A.</a>
+      <div class="nav-links">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf" target="_blank" class="nav-resume-btn"
+          >Resume</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="project-page-hero">
+      <a href="../index.html#projects" class="back-link"
+        >&#8592; Back to Projects</a
+      >
+      <h1 class="project-page-title">CyberPartner — AI Pentesting Terminal</h1>
+      <p class="project-page-subtitle">
+        A command-line security assistant that automates reconnaissance and
+        OSINT, then uses an LLM to turn raw findings into an analyst-style
+        report.
+      </p>
+      <div class="project-page-tags">
+        <span>Python</span>
+        <span>Textual TUI</span>
+        <span>Anthropic API</span>
+        <span>OSINT</span>
+        <span>nmap</span>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="project-content-section">
+      <div class="project-content-inner">
+        <h2>Overview</h2>
+        <p>
+          CyberPartner is a terminal-based security assistant I built in Python
+          with a Textual TUI. The idea was simple: a lot of early recon work is
+          repetitive glue between tools, so I wanted one command-line partner
+          that runs the collection for me and hands back something readable.
+        </p>
+        <p>
+          It pulls subdomains and certificate data from crt.sh, harvests email
+          patterns through the Hunter.io API, and drives nmap as a subprocess
+          for service enumeration. Once the data is collected, it passes
+          everything to the Anthropic API to summarize the findings into a
+          clean, analyst-style report instead of a wall of raw output.
+        </p>
+
+        <h2>How It Works</h2>
+        <ul>
+          <li>
+            Textual TUI front end for interactive use right in the terminal
+          </li>
+          <li>
+            crt.sh queries for subdomain and certificate transparency data
+          </li>
+          <li>
+            Hunter.io API integration to harvest email patterns for a domain
+          </li>
+          <li>nmap run as a subprocess for service and port enumeration</li>
+          <li>
+            Anthropic API summarizes the collected data into a structured report
+          </li>
+        </ul>
+
+        <h2>What I Learned</h2>
+        <ul>
+          <li>Wiring multiple OSINT sources into one collection pipeline</li>
+          <li>Driving external CLI tools cleanly from Python subprocesses</li>
+          <li>Designing a usable terminal UI with Textual</li>
+          <li>
+            Prompting an LLM to turn messy tool output into useful analysis
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="project-footer-nav">
+      <a href="../index.html#projects">&#8592; Back to all projects</a>
+    </div>
+
+    <footer class="footer">
+      <p>Designed &amp; Built by Alyan Anwar</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
