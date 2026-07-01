@@ -1,406 +1,961 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alyan Anwar — Portfolio</title>
-  <meta name="description" content="Alyan Anwar — Computer Engineering student, cybersecurity enthusiast, and IT professional. University of the Pacific.">
-  <meta name="author" content="Alyan Anwar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alyan Anwar — Portfolio</title>
+    <meta
+      name="description"
+      content="Alyan Anwar — Computer Engineering student, cybersecurity enthusiast, and IT professional. University of the Pacific."
+    />
+    <meta name="author" content="Alyan Anwar" />
 
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Alyan Anwar — Portfolio">
-  <meta property="og:description" content="Computer Engineering student, cybersecurity enthusiast, and IT professional based in Stockton, CA.">
-  <meta property="og:url" content="https://alyananwar.github.io">
-  <meta property="og:image" content="https://alyananwar.github.io/images/og-preview.png">
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alyan Anwar — Portfolio" />
+    <meta
+      property="og:description"
+      content="Computer Engineering student, cybersecurity enthusiast, and IT professional based in Stockton, CA."
+    />
+    <meta property="og:url" content="https://alyananwar.github.io" />
+    <meta
+      property="og:image"
+      content="https://alyananwar.github.io/images/og-preview.png"
+    />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alyan Anwar — Portfolio">
-  <meta name="twitter:description" content="Computer Engineering student, cybersecurity enthusiast, and IT professional.">
-  <meta name="twitter:image" content="https://alyananwar.github.io/images/og-preview.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alyan Anwar — Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Computer Engineering student, cybersecurity enthusiast, and IT professional."
+    />
+    <meta
+      name="twitter:image"
+      content="https://alyananwar.github.io/images/og-preview.png"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <canvas id="particle-canvas"></canvas>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="#" class="nav-logo">A.</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="hero-greeting fade-up">&gt; hello_world.exe</p>
-        <h1 class="hero-name fade-up delay-1"><span class="hero-name-text"></span><span class="cursor-blink">_</span></h1>
-        <p class="hero-tagline fade-up delay-2">// cybersecurity enthusiast. problem solver. builder.</p>
-        <div class="hero-meta fade-up delay-2">
-          <span>university_of_the_pacific</span>
-          <span>computer_engineering</span>
-        </div>
-        <div class="hero-status fade-up delay-2">
-          <span class="status-dot"></span>
-          <span>available_for_internships</span>
-        </div>
-        <a href="#about" class="hero-cta fade-up delay-3">[ scroll_down ]</a>
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#" class="nav-logo">A.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" target="_blank" class="nav-resume-btn">Resume</a>
       </div>
-      <div class="ascii-collage fade-up delay-1">
-        <div class="ascii-panel ascii-panel--large">
-          <img src="images/ascii-1.png" alt="Alyan Anwar — ASCII portrait">
-        </div>
-        <div class="ascii-panel">
-          <img src="images/ascii-2.png" alt="Alyan Anwar — ASCII portrait 2">
-        </div>
-        <div class="ascii-panel">
-          <img src="images/ascii-3.png" alt="Alyan Anwar — ASCII portrait 3">
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-indicator">
-      <div class="scroll-dot"></div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- About -->
-  <section id="about" class="section about">
-    <div class="container">
-      <h2 class="section-title reveal">About Me</h2>
-      <div class="about-content reveal">
-        <!-- PHOTO: Replace src with your image, e.g. "images/headshot.jpg" -->
-        <div class="about-photo-wrapper">
-          <div class="about-photo">
-            <img src="images/headshot.jpg" alt="Alyan Anwar" onerror="this.parentElement.parentElement.style.display='none'">
-          </div>
-        </div>
-        <div class="about-text">
-          <p>
-            I'm a Computer Engineering student at the <strong>University of the Pacific</strong> with a
-            passion for cybersecurity and hands-on technology. From securing city infrastructure to
-            building custom PCs, I thrive at the intersection of hardware and security.
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting fade-up">&gt; hello_world.exe</p>
+          <h1 class="hero-name fade-up delay-1">
+            <span class="hero-name-text"></span
+            ><span class="cursor-blink">_</span>
+          </h1>
+          <p class="hero-tagline fade-up delay-2">
+            // cybersecurity enthusiast. problem solver. builder.
           </p>
-          <p>
-            My journey in tech started with taking apart computers and putting them back together — a
-            curiosity that evolved into an IT career and a drive to protect the systems people depend
-            on every day. I earned my <strong>Associate of Science degree</strong> through dual enrollment
-            at San Joaquin Delta College while still in high school, and haven't slowed down since.
-          </p>
-          <p>
-            I'm someone who genuinely enjoys figuring things out. Whether it's a stubborn network issue
-            or a new tool I've never touched before, I approach every problem with critical thinking and a
-            willingness to dig in until I understand it. I don't just want to know <em>how</em> something
-            works — I want to know <em>why</em>.
-          </p>
+          <div class="hero-meta fade-up delay-2">
+            <span>university_of_the_pacific</span>
+            <span>computer_engineering</span>
+          </div>
+          <div class="hero-status fade-up delay-2">
+            <span class="status-dot"></span>
+            <span>available_for_internships</span>
+          </div>
+          <a href="#about" class="hero-cta fade-up delay-3">[ scroll_down ]</a>
         </div>
-        <div class="about-stats reveal">
-          <div class="stat">
-            <span class="stat-num">3+</span>
-            <span class="stat-label">Internships</span>
+        <div class="ascii-collage fade-up delay-1">
+          <div class="ascii-panel ascii-panel--large">
+            <img src="images/ascii-1.png" alt="Alyan Anwar — ASCII portrait" />
           </div>
-          <div class="stat">
-            <span class="stat-num">6</span>
-            <span class="stat-label">Projects</span>
+          <div class="ascii-panel">
+            <img
+              src="images/ascii-2.png"
+              alt="Alyan Anwar — ASCII portrait 2"
+            />
           </div>
-          <div class="stat">
-            <span class="stat-num">2</span>
-            <span class="stat-label">Degrees</span>
+          <div class="ascii-panel">
+            <img
+              src="images/ascii-3.png"
+              alt="Alyan Anwar — ASCII portrait 3"
+            />
           </div>
-        </div>
-        <div class="about-details">
-          <div class="about-detail-group">
-            <h3>Platforms & Tools</h3>
-            <div class="about-skills">
-              <a href="https://azure.microsoft.com" target="_blank" rel="noopener" class="skill-tag">Azure</a>
-              <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview" target="_blank" rel="noopener" class="skill-tag">Active Directory</a>
-              <a href="https://learn.microsoft.com/en-us/mem/intune/" target="_blank" rel="noopener" class="skill-tag">Microsoft Intune</a>
-              <a href="https://www.paloaltonetworks.com" target="_blank" rel="noopener" class="skill-tag">Palo Alto Networks</a>
-              <a href="https://www.vmware.com" target="_blank" rel="noopener" class="skill-tag">VMware</a>
-              <a href="https://www.crowdstrike.com" target="_blank" rel="noopener" class="skill-tag">CrowdStrike</a>
-              <a href="https://www.quest.com/products/kace-systems-management-appliance/" target="_blank" rel="noopener" class="skill-tag">KACE</a>
-              <a href="https://www.servicenow.com" target="_blank" rel="noopener" class="skill-tag">ServiceNow</a>
-              <a href="https://www.cisco.com/c/en/us/products/customer-collaboration/finesse/index.html" target="_blank" rel="noopener" class="skill-tag">Cisco Finesse</a>
-              <a href="https://www.beyondtrust.com/remote-support" target="_blank" rel="noopener" class="skill-tag">Bomgar</a>
-              <a href="https://www.intel.com/content/www/us/en/products/details/fpga/development-tools/quartus-prime.html" target="_blank" rel="noopener" class="skill-tag">Quartus</a>
-            </div>
-          </div>
-          <div class="about-detail-group">
-            <h3>Technical Skills</h3>
-            <div class="about-skills">
-              <a href="https://www.python.org" target="_blank" rel="noopener" class="skill-tag">Python</a>
-              <a href="https://isocpp.org" target="_blank" rel="noopener" class="skill-tag">C++</a>
-              <a href="https://www.kali.org" target="_blank" rel="noopener" class="skill-tag">Kali Linux</a>
-              <a href="https://nmap.org" target="_blank" rel="noopener" class="skill-tag">Nmap</a>
-              <a href="https://www.wireshark.org" target="_blank" rel="noopener" class="skill-tag">Wireshark</a>
-              <a href="https://www.metasploit.com" target="_blank" rel="noopener" class="skill-tag">Metasploit</a>
-              <a href="https://www.comptia.org/content/guides/what-is-a-computer-network" target="_blank" rel="noopener" class="skill-tag">Networking</a>
-              <a href="https://www.cisco.com/c/en/us/products/unified-communications/what-is-voip.html" target="_blank" rel="noopener" class="skill-tag">VoIP Support</a>
-              <a href="https://www.nist.gov/cybersecurity" target="_blank" rel="noopener" class="skill-tag">CIA Triad</a>
-              <a href="https://www.anthropic.com/research/prompt-engineering" target="_blank" rel="noopener" class="skill-tag">Prompt Engineering</a>
-              <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener" class="skill-tag">Agentic AI</a>
-              <a href="https://www.microsoft.com/en-us/microsoft-365" target="_blank" rel="noopener" class="skill-tag">Microsoft &amp; Google Suite</a>
-              <a href="https://learn.microsoft.com/en-us/powershell/" target="_blank" rel="noopener" class="skill-tag">Windows CMD / PowerShell</a>
-              <a href="https://www.gnu.org/software/bash/manual/bash.html" target="_blank" rel="noopener" class="skill-tag">Linux Terminal</a>
-            </div>
-          </div>
-        </div>
-        <div class="beyond-code reveal">
-          <h3>Beyond the Code</h3>
-          <p>
-            When I'm not behind a screen, you'll probably find me working on my car, hooping on the
-            basketball court, playing volleyball, hitting the gym, or out on a hike. I also love exploring new
-            restaurants and trying foods I've never had before — always down for a good recommendation.
-          </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="section experience">
-    <div class="container">
-      <h2 class="section-title reveal">Experience & Involvement</h2>
-
-      <div class="timeline">
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>IT Support Desk Intern</h3>
-              <span class="timeline-place">City of Stockton</span>
-            </div>
-            <p class="timeline-date">July 2025 – March 2026</p>
-            <p>Imaged and deployed computers across city departments. Coordinated with the network team on port security, prepared reports, and trained new hires. Worked with partners like Palo Alto Networks, Telcion, and Quest Software — managing logs and monitoring UEM/SIEM systems through Azure and Active Directory. Performed secure hard drive wipes and provided remote support via ServiceNow, Bomgar, Cisco Finesse, and KACE.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Brothers Event Coordinator</h3>
-              <span class="timeline-place">Muslim Student Association — University of the Pacific</span>
-            </div>
-            <p class="timeline-date">March 2025 – Present</p>
-            <p>Serving on the MSA board at UOP, organizing and leading events for the brothers community on campus.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Volunteer — STEM San Joaquin</h3>
-              <span class="timeline-place">Lawrence Livermore National Laboratory</span>
-            </div>
-            <p class="timeline-date">October 2024</p>
-            <p>Led a hands-on workshop for students in San Joaquin County, guiding them through dismantling, identifying, and rebuilding internal computer hardware — hosted by LLNL at the University of the Pacific.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>IT Technician Intern</h3>
-              <span class="timeline-place">Computer Pros</span>
-            </div>
-            <p class="timeline-date">June 2024 – Aug 2024</p>
-            <p>Led strategic upgrades for partners like Pacific Home Care, improving network performance and reducing downtime by 20%. Resolved customer issues on first contact and implemented security updates through network interfaces.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Biology Lab Aide</h3>
-              <span class="timeline-place">San Joaquin Delta College</span>
-            </div>
-            <p class="timeline-date">March 2024 – Aug 2024</p>
-            <p>Enforced GHS and lab safety procedures, maintained autoclave and lab equipment, and supported over 50 student labs. Completed dual enrollment here, earning an AS degree with honors alongside my high school diploma.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>General Intern</h3>
-              <span class="timeline-place">Holt of California</span>
-            </div>
-            <p class="timeline-date">June 2023 – July 2023</p>
-            <p>Worked in sales operations and customer relationship management. Assisted in diagnosing and repairing CAT machinery and completed electrical analysis training for power generation systems.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3>Community Volunteer</h3>
-              <span class="timeline-place">Community Islamic Center</span>
-            </div>
-            <p>Ongoing volunteer supporting community events, organizing programs, and giving back to the local community.</p>
-          </div>
-        </div>
-
+      <div class="hero-scroll-indicator">
+        <div class="scroll-dot"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certifications -->
-  <section id="certs" class="section certs">
-    <div class="container">
-      <h2 class="section-title reveal">Certifications</h2>
-      <p class="cert-soon reveal">// certifications_coming_soon</p>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2 class="section-title reveal">Projects</h2>
-      <div class="projects-grid reveal">
-
-        <a href="projects/tigertrack.html" class="project-card-link">
-          <article class="project-card">
-            <div class="project-top">
-              <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-content reveal">
+          <!-- PHOTO: Replace src with your image, e.g. "images/headshot.jpg" -->
+          <div class="about-photo-wrapper">
+            <div class="about-photo">
+              <img
+                src="images/headshot.jpg"
+                alt="Alyan Anwar"
+                onerror="
+                  this.parentElement.parentElement.style.display = 'none'
+                "
+              />
             </div>
-            <h3 class="project-title">TigerTrack — UOP Course Planner</h3>
-            <p class="project-description">Built in 11 hours at PacificHacks — now greenlit by the University of the Pacific for official adoption. Combines real DegreeWorks data, 988 UOP courses, drag-and-drop semester planning, an AI scheduler, and an AI chatbot advisor. Live on Vercel and actively being expanded post-hackathon.</p>
-            <div class="project-tags">
-              <span>Next.js</span>
-              <span>TypeScript</span>
-              <span>Groq AI</span>
-              <span>Firebase</span>
+          </div>
+          <div class="about-text">
+            <p>
+              I'm a Computer Engineering student at the
+              <strong>University of the Pacific</strong> with a passion for
+              cybersecurity and hands-on technology. From securing city
+              infrastructure to building custom PCs, I thrive at the
+              intersection of hardware and security.
+            </p>
+            <p>
+              My journey in tech started with taking apart computers and putting
+              them back together — a curiosity that evolved into an IT career
+              and a drive to protect the systems people depend on every day. I
+              earned my <strong>Associate of Science degree</strong> through
+              dual enrollment at San Joaquin Delta College while still in high
+              school, and haven't slowed down since.
+            </p>
+            <p>
+              I'm someone who genuinely enjoys figuring things out. Whether it's
+              a stubborn network issue or a new tool I've never touched before,
+              I approach every problem with critical thinking and a willingness
+              to dig in until I understand it. I don't just want to know
+              <em>how</em> something works — I want to know <em>why</em>.
+            </p>
+          </div>
+          <div class="about-stats reveal">
+            <div class="stat">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Internships</span>
             </div>
-          </article>
-        </a>
-
-        <a href="projects/pihole.html" class="project-card-link">
-          <article class="project-card">
-            <div class="project-top">
-              <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <div class="stat">
+              <span class="stat-num">10</span>
+              <span class="stat-label">Projects</span>
             </div>
-            <h3 class="project-title">Pi-hole DNS Server</h3>
-            <p class="project-description">Configured a Raspberry Pi with a custom-built enclosure to run a Pi-hole DNS server, blocking ads and tracking at the network level across the home network.</p>
-            <div class="project-tags">
-              <span>Networking</span>
-              <span>Raspberry Pi</span>
-              <span>DNS</span>
-              <span>Linux</span>
+            <div class="stat">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Degrees</span>
             </div>
-          </article>
-        </a>
-
-        <a href="projects/formula-sae.html" class="project-card-link">
-          <article class="project-card">
-            <div class="project-top">
-              <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="about-details">
+            <div class="about-detail-group">
+              <h3>Platforms & Tools</h3>
+              <div class="about-skills">
+                <a
+                  href="https://azure.microsoft.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Azure</a
+                >
+                <a
+                  href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Active Directory</a
+                >
+                <a
+                  href="https://learn.microsoft.com/en-us/mem/intune/"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Microsoft Intune</a
+                >
+                <a
+                  href="https://www.paloaltonetworks.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Palo Alto Networks</a
+                >
+                <a
+                  href="https://www.vmware.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >VMware</a
+                >
+                <a
+                  href="https://www.crowdstrike.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >CrowdStrike</a
+                >
+                <a
+                  href="https://www.quest.com/products/kace-systems-management-appliance/"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >KACE</a
+                >
+                <a
+                  href="https://www.servicenow.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >ServiceNow</a
+                >
+                <a
+                  href="https://www.cisco.com/c/en/us/products/customer-collaboration/finesse/index.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Cisco Finesse</a
+                >
+                <a
+                  href="https://www.beyondtrust.com/remote-support"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Bomgar</a
+                >
+                <a
+                  href="https://www.intel.com/content/www/us/en/products/details/fpga/development-tools/quartus-prime.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Quartus</a
+                >
+              </div>
             </div>
-            <h3 class="project-title">Formula SAE — UOP Motorsports</h3>
-            <p class="project-description">Used CAD software to design and build components for the UOP Formula SAE race car, including a dash plate and ECU mount.</p>
-            <div class="project-tags">
-              <span>CAD</span>
-              <span>Mechanical Design</span>
-              <span>Engineering</span>
+            <div class="about-detail-group">
+              <h3>Technical Skills</h3>
+              <div class="about-skills">
+                <a
+                  href="https://www.python.org"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Python</a
+                >
+                <a
+                  href="https://isocpp.org"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >C++</a
+                >
+                <a
+                  href="https://www.kali.org"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Kali Linux</a
+                >
+                <a
+                  href="https://nmap.org"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Nmap</a
+                >
+                <a
+                  href="https://www.wireshark.org"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Wireshark</a
+                >
+                <a
+                  href="https://www.metasploit.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Metasploit</a
+                >
+                <a
+                  href="https://owasp.org/www-project-web-security-testing-guide/"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Penetration Testing</a
+                >
+                <a
+                  href="https://www.sans.org/blog/what-is-open-source-intelligence/"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >OSINT</a
+                >
+                <a
+                  href="https://www.comptia.org/content/guides/what-is-a-computer-network"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Networking</a
+                >
+                <a
+                  href="https://www.cisco.com/c/en/us/products/unified-communications/what-is-voip.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >VoIP Support</a
+                >
+                <a
+                  href="https://www.nist.gov/cybersecurity"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >CIA Triad</a
+                >
+                <a
+                  href="https://www.anthropic.com/research/prompt-engineering"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Prompt Engineering</a
+                >
+                <a
+                  href="https://www.anthropic.com/research/building-effective-agents"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Agentic AI</a
+                >
+                <a
+                  href="https://www.microsoft.com/en-us/microsoft-365"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Microsoft &amp; Google Suite</a
+                >
+                <a
+                  href="https://learn.microsoft.com/en-us/powershell/"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Windows CMD / PowerShell</a
+                >
+                <a
+                  href="https://www.gnu.org/software/bash/manual/bash.html"
+                  target="_blank"
+                  rel="noopener"
+                  class="skill-tag"
+                  >Linux Terminal</a
+                >
+              </div>
             </div>
-          </article>
-        </a>
-
-        <a href="projects/stem-outreach.html" class="project-card-link">
-          <article class="project-card">
-            <div class="project-top">
-              <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3 class="project-title">STEM Outreach & Education</h3>
-            <p class="project-description">Led hands-on hardware workshops for middle school students through STEM San Joaquin, co-hosted by Lawrence Livermore National Laboratory.</p>
-            <div class="project-tags">
-              <span>Education</span>
-              <span>Hardware</span>
-              <span>Community</span>
-            </div>
-          </article>
-        </a>
-
-        <a href="projects/custom-pc.html" class="project-card-link">
-          <article class="project-card">
-            <div class="project-top">
-              <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h3 class="project-title">Custom PC Building Business</h3>
-            <p class="project-description">Founded and operate a custom PC building service — consulting with clients on their needs, sourcing components, assembling systems, and providing ongoing support.</p>
-            <div class="project-tags">
-              <span>Hardware</span>
-              <span>Consulting</span>
-              <span>Entrepreneurship</span>
-            </div>
-          </article>
-        </a>
-
-        <a href="projects/city-it.html" class="project-card-link">
-          <article class="project-card">
-            <div class="project-top">
-              <svg class="project-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="project-title">City IT Infrastructure Support</h3>
-            <p class="project-description">Hands-on work maintaining and securing IT systems across multiple City of Stockton departments — help desk, network troubleshooting, and system administration.</p>
-            <div class="project-tags">
-              <span>Networking</span>
-              <span>Active Directory</span>
-              <span>Security</span>
-            </div>
-          </article>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-title reveal">Get In Touch</h2>
-      <div class="contact-content reveal">
-        <p>Whether you have a cybersecurity question, need a custom PC build, or just want to connect — my inbox is always open.</p>
-        <div class="contact-buttons">
-          <a href="mailto:a_anwar5@u.pacific.edu" class="contact-btn" id="email-copy-btn">Say Hello</a>
-          <a href="resume.pdf" target="_blank" class="contact-btn contact-btn-outline">Download Resume</a>
+          </div>
+          <div class="beyond-code reveal">
+            <h3>Beyond the Code</h3>
+            <p>
+              When I'm not behind a screen, you'll probably find me working on
+              my car, hooping on the basketball court, playing volleyball,
+              hitting the gym, or out on a hike. I also love exploring new
+              restaurants and trying foods I've never had before — always down
+              for a good recommendation.
+            </p>
+          </div>
         </div>
-        <div class="contact-socials">
-          <a href="https://github.com/alyananwar" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <h2 class="section-title reveal">Experience & Involvement</h2>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>IT Support Desk Intern</h3>
+                <span class="timeline-place">City of Stockton</span>
+              </div>
+              <p class="timeline-date">July 2025 – March 2026</p>
+              <p>
+                Imaged and deployed computers across city departments.
+                Coordinated with the network team on port security, prepared
+                reports, and trained new hires. Worked with partners like Palo
+                Alto Networks, Telcion, and Quest Software — managing logs and
+                monitoring UEM/SIEM systems through Azure and Active Directory.
+                Performed secure hard drive wipes and provided remote support
+                via ServiceNow, Bomgar, Cisco Finesse, and KACE.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Brothers Event Coordinator</h3>
+                <span class="timeline-place"
+                  >Muslim Student Association — University of the Pacific</span
+                >
+              </div>
+              <p class="timeline-date">March 2025 – Present</p>
+              <p>
+                Serving on the MSA board at UOP, organizing and leading events
+                for the brothers community on campus.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Volunteer — STEM San Joaquin</h3>
+                <span class="timeline-place"
+                  >Lawrence Livermore National Laboratory</span
+                >
+              </div>
+              <p class="timeline-date">October 2024</p>
+              <p>
+                Led a hands-on workshop for students in San Joaquin County,
+                guiding them through dismantling, identifying, and rebuilding
+                internal computer hardware — hosted by LLNL at the University of
+                the Pacific.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>IT Technician Intern</h3>
+                <span class="timeline-place">Computer Pros</span>
+              </div>
+              <p class="timeline-date">June 2024 – Aug 2024</p>
+              <p>
+                Led strategic upgrades for partners like Pacific Home Care,
+                improving network performance and reducing downtime by 20%.
+                Resolved customer issues on first contact and implemented
+                security updates through network interfaces.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Biology Lab Aide</h3>
+                <span class="timeline-place">San Joaquin Delta College</span>
+              </div>
+              <p class="timeline-date">March 2024 – Aug 2024</p>
+              <p>
+                Enforced GHS and lab safety procedures, maintained autoclave and
+                lab equipment, and supported over 50 student labs. Completed
+                dual enrollment here, earning an AS degree with honors alongside
+                my high school diploma.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>General Intern</h3>
+                <span class="timeline-place">Holt of California</span>
+              </div>
+              <p class="timeline-date">June 2023 – July 2023</p>
+              <p>
+                Worked in sales operations and customer relationship management.
+                Assisted in diagnosing and repairing CAT machinery and completed
+                electrical analysis training for power generation systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Community Volunteer</h3>
+                <span class="timeline-place">Community Islamic Center</span>
+              </div>
+              <p>
+                Ongoing volunteer supporting community events, organizing
+                programs, and giving back to the local community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certs" class="section certs">
+      <div class="container">
+        <h2 class="section-title reveal">Certifications</h2>
+        <p class="cert-soon reveal">// certifications_coming_soon</p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="projects-grid reveal">
+          <a href="projects/tigertrack.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <h3 class="project-title">TigerTrack — UOP Course Planner</h3>
+              <p class="project-description">
+                Built in 11 hours at PacificHacks, took 2nd place, and is now
+                greenlit by the University of the Pacific for official adoption.
+                Combines real DegreeWorks data, 988 UOP courses, drag-and-drop
+                semester planning, an AI scheduler, and an AI chatbot advisor.
+                Live on Vercel and actively being expanded post-hackathon.
+              </p>
+              <div class="project-tags">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Groq AI</span>
+                <span>Firebase</span>
+              </div>
+            </article>
           </a>
-          <a href="https://linkedin.com/in/alyananwar" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+
+          <a href="projects/cyberpartner.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="4 17 10 11 4 5" />
+                  <line x1="12" y1="19" x2="20" y2="19" />
+                </svg>
+              </div>
+              <h3 class="project-title">
+                CyberPartner — AI Pentesting Terminal
+              </h3>
+              <p class="project-description">
+                A command-line security assistant built in Python with a Textual
+                TUI. Automates recon and OSINT — pulls subdomains and cert data
+                from crt.sh, harvests email patterns via the Hunter.io API, and
+                drives nmap for service enumeration, then uses the Anthropic API
+                to summarize findings into an analyst-style report.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Textual TUI</span>
+                <span>Anthropic API</span>
+                <span>OSINT</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/pentest-ecpe178.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="project-title">Network Penetration Test — ECPE 178</h3>
+              <p class="project-description">
+                Full pen test against a hardened target VM from a Kali attack
+                box. Mapped the attack surface with nmap, exploited an
+                UnrealIRCd backdoor (CVE-2010-2075) via Metasploit, chained a
+                Docker-group misconfiguration to escalate to root, then cracked
+                MD5-crypt hashes with John the Ripper. Full kill chain
+                documented.
+              </p>
+              <div class="project-tags">
+                <span>Kali Linux</span>
+                <span>Metasploit</span>
+                <span>Nmap</span>
+                <span>John the Ripper</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/easyreview.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17l-6.2 3.6 1.6-6.7L2.2 8.9l6.9-.6z"
+                  />
+                </svg>
+              </div>
+              <h3 class="project-title">EasyReview — Review Automation SaaS</h3>
+              <p class="project-description">
+                A full-stack automation tool that integrates the QuickBooks API
+                and sends SMS review requests automatically — replacing a paid
+                SaaS product at near-zero cost for a local business. Sends 300+
+                messages a month using Supabase, Next.js, and Playwright browser
+                automation on a cron schedule.
+              </p>
+              <div class="project-tags">
+                <span>Next.js</span>
+                <span>Supabase</span>
+                <span>QuickBooks API</span>
+                <span>Playwright</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/giveledger.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </div>
+              <h3 class="project-title">GiveLedger — HackDavis 2026</h3>
+              <p class="project-description">
+                An AI-powered donation tracker for nonprofits. Volunteers snap a
+                photo of donated goods and the app identifies items, estimates
+                value, and logs everything into a clean ledger — turning a
+                manual intake process into a few taps. Built at HackDavis 2026.
+              </p>
+              <div class="project-tags">
+                <span>AI Vision</span>
+                <span>Next.js</span>
+                <span>Nonprofit</span>
+                <span>Hackathon</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/pihole.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path
+                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                  />
+                </svg>
+              </div>
+              <h3 class="project-title">Pi-hole DNS Server</h3>
+              <p class="project-description">
+                Configured a Raspberry Pi with a custom-built enclosure to run a
+                Pi-hole DNS server, blocking ads and tracking at the network
+                level across the home network.
+              </p>
+              <div class="project-tags">
+                <span>Networking</span>
+                <span>Raspberry Pi</span>
+                <span>DNS</span>
+                <span>Linux</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/formula-sae.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h3 class="project-title">Formula SAE — UOP Motorsports</h3>
+              <p class="project-description">
+                Used CAD software to design and build components for the UOP
+                Formula SAE race car, including a dash plate and ECU mount.
+              </p>
+              <div class="project-tags">
+                <span>CAD</span>
+                <span>Mechanical Design</span>
+                <span>Engineering</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/stem-outreach.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h3 class="project-title">STEM Outreach & Education</h3>
+              <p class="project-description">
+                Led hands-on hardware workshops for middle school students
+                through STEM San Joaquin, co-hosted by Lawrence Livermore
+                National Laboratory.
+              </p>
+              <div class="project-tags">
+                <span>Education</span>
+                <span>Hardware</span>
+                <span>Community</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/custom-pc.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <h3 class="project-title">Custom PC Building Business</h3>
+              <p class="project-description">
+                Founded and operate a custom PC building service — consulting
+                with clients on their needs, sourcing components, assembling
+                systems, and providing ongoing support.
+              </p>
+              <div class="project-tags">
+                <span>Hardware</span>
+                <span>Consulting</span>
+                <span>Entrepreneurship</span>
+              </div>
+            </article>
+          </a>
+
+          <a href="projects/city-it.html" class="project-card-link">
+            <article class="project-card">
+              <div class="project-top">
+                <svg
+                  class="project-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 class="project-title">City IT Infrastructure Support</h3>
+              <p class="project-description">
+                Hands-on work maintaining and securing IT systems across
+                multiple City of Stockton departments — help desk, network
+                troubleshooting, and system administration.
+              </p>
+              <div class="project-tags">
+                <span>Networking</span>
+                <span>Active Directory</span>
+                <span>Security</span>
+              </div>
+            </article>
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>Designed & Built by Alyan Anwar</p>
-  </footer>
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title reveal">Get In Touch</h2>
+        <div class="contact-content reveal">
+          <p>
+            Whether you have a cybersecurity question, need a custom PC build,
+            or just want to connect — my inbox is always open.
+          </p>
+          <div class="contact-buttons">
+            <a
+              href="mailto:a_anwar5@u.pacific.edu"
+              class="contact-btn"
+              id="email-copy-btn"
+              >Say Hello</a
+            >
+            <a
+              href="resume.pdf"
+              target="_blank"
+              class="contact-btn contact-btn-outline"
+              >Download Resume</a
+            >
+          </div>
+          <div class="contact-socials">
+            <a
+              href="https://github.com/alyananwar"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com/in/alyananwar"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Designed & Built by Alyan Anwar</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
