@@ -314,8 +314,8 @@ const asciiFigure = document.querySelector(".ascii-gen");
 const asciiPre = document.getElementById("ascii-pre");
 
 if (asciiFigure && asciiPre) {
-  const COLS = 120;
-  const ROWS = 45; // COLS × 0.6 mono advance ÷ 1.6 display aspect
+  const COLS = 104;
+  const ROWS = 64; // near-square grid: COLS × 0.6 mono advance ÷ ~0.975 aspect
   const RAMP = " .:-=+*#%@";
   const GEN_DURATION = 2600; // matches the scanSweep / asciiReveal CSS timing
   let asciiLines = null;
@@ -327,18 +327,16 @@ if (asciiFigure && asciiPre) {
     canvas.width = COLS;
     canvas.height = ROWS;
     const ctx = canvas.getContext("2d", { willReadFrequently: true });
-    // Cover-crop the source to the wider display aspect, biased toward the
-    // top of the frame so the face stays in the crop
-    const targetAspect = 1.6;
+    // Match the source's own aspect so the WHOLE portrait renders uncropped
+    const targetAspect = (COLS * 0.6) / ROWS;
     let sw = img.naturalWidth;
     let sh = sw / targetAspect;
     let sx = 0;
-    // Keep the very top of the frame so the full head stays in the crop
-    let sy = Math.max(0, Math.min(img.naturalHeight - sh, 0));
+    let sy = Math.max(0, (img.naturalHeight - sh) / 2);
     if (sh > img.naturalHeight) {
       sh = img.naturalHeight;
       sw = sh * targetAspect;
-      sx = (img.naturalWidth - sw) / 2;
+      sx = Math.max(0, (img.naturalWidth - sw) / 2);
       sy = 0;
     }
     ctx.drawImage(img, sx, sy, sw, sh, 0, 0, COLS, ROWS);
@@ -412,7 +410,7 @@ if (asciiFigure && asciiPre) {
   }
 
   const asciiSource = new Image();
-  asciiSource.src = "images/ascii-1.png";
+  asciiSource.src = "images/ascii-full.png";
   asciiSource
     .decode()
     .then(() => {
