@@ -1246,7 +1246,7 @@ a.timeline-link:hover .timeline-cta .arrow {
 /* ========== About ========== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
@@ -1351,10 +1351,10 @@ a.timeline-link:hover .timeline-cta .arrow {
 .ascii-pre {
   display: none;
   font-family: var(--font-mono);
-  /* 120 columns × 0.6em mono advance fill the container width exactly */
-  font-size: calc(100cqw / 72);
+  /* 104 columns × 0.6em mono advance fill the container width exactly */
+  font-size: calc(100cqw / 62.4);
   line-height: 1;
-  aspect-ratio: 1.6; /* matches the 1.6 source crop */
+  aspect-ratio: 0.975; /* near-square: shows the whole portrait */
   overflow: hidden;
   white-space: pre;
   color: var(--text);
