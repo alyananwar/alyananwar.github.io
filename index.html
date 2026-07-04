@@ -89,6 +89,7 @@
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
+        <a href="#certifications">Certs</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a
@@ -155,6 +156,7 @@
         <nav class="landing-menu" id="landing-menu" aria-label="Landing menu">
           <a href="#work">work</a>
           <a href="#experience">experience</a>
+          <a href="#certifications">certifications</a>
           <a href="#involvement">involvement</a>
           <a href="#about">about</a>
           <a href="#contact">contact</a>
@@ -336,10 +338,7 @@
               </article>
             </a>
 
-            <a
-              href="projects/cyberpartner.html"
-              class="featured-card no-media reveal"
-            >
+            <a href="projects/cyberpartner.html" class="featured-card reveal">
               <article>
                 <div class="featured-grid">
                   <div>
@@ -372,14 +371,20 @@
                       >Read case study <span class="arrow">→</span></span
                     >
                   </div>
+                  <div class="featured-media">
+                    <img
+                      src="images/projects/cyberpartner/screenshot-1.png"
+                      alt="CyberPartner terminal UI running recon next to a Kali Linux desktop"
+                      loading="lazy"
+                      width="1872"
+                      height="840"
+                    />
+                  </div>
                 </div>
               </article>
             </a>
 
-            <a
-              href="projects/easyreview.html"
-              class="featured-card no-media reveal"
-            >
+            <a href="projects/easyreview.html" class="featured-card reveal">
               <article>
                 <div class="featured-grid">
                   <div>
@@ -409,6 +414,325 @@
                     <span class="featured-cta"
                       >Read case study <span class="arrow">→</span></span
                     >
+                  </div>
+                  <div class="featured-media featured-media-diagram">
+                    <!-- EasyReview automation flow: reused full-size inside the case study -->
+                    <svg
+                      class="flow-diagram"
+                      viewBox="0 0 640 400"
+                      role="img"
+                      aria-label="EasyReview automation flow: QuickBooks detects finished jobs and a cron schedule triggers the EasyReview engine, which stores state in Supabase and sends an SMS review request that earns a Google review"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <marker
+                          id="er-arrow-blue"
+                          viewBox="0 0 10 10"
+                          refX="8"
+                          refY="5"
+                          markerWidth="7"
+                          markerHeight="7"
+                          orient="auto-start-reverse"
+                        >
+                          <path d="M0 0L10 5L0 10z" fill="var(--blue)" />
+                        </marker>
+                        <marker
+                          id="er-arrow-red"
+                          viewBox="0 0 10 10"
+                          refX="8"
+                          refY="5"
+                          markerWidth="7"
+                          markerHeight="7"
+                          orient="auto-start-reverse"
+                        >
+                          <path d="M0 0L10 5L0 10z" fill="var(--red)" />
+                        </marker>
+                        <marker
+                          id="er-arrow-green"
+                          viewBox="0 0 10 10"
+                          refX="8"
+                          refY="5"
+                          markerWidth="7"
+                          markerHeight="7"
+                          orient="auto-start-reverse"
+                        >
+                          <path d="M0 0L10 5L0 10z" fill="var(--green)" />
+                        </marker>
+                      </defs>
+
+                      <text
+                        x="34"
+                        y="26"
+                        fill="var(--text-3)"
+                        font-family="var(--font-mono)"
+                        font-size="12"
+                        letter-spacing="0.5"
+                      >
+                        easyreview · automation flow
+                      </text>
+
+                      <!-- Connectors -->
+                      <path
+                        d="M150 100 Q200 150 246 168"
+                        fill="none"
+                        stroke="var(--blue)"
+                        stroke-width="2"
+                        marker-end="url(#er-arrow-blue)"
+                      />
+                      <path
+                        d="M490 100 Q440 150 394 168"
+                        fill="none"
+                        stroke="var(--red)"
+                        stroke-width="2"
+                        marker-end="url(#er-arrow-red)"
+                      />
+                      <path
+                        d="M240 234 Q180 272 152 300"
+                        fill="none"
+                        stroke="var(--text-3)"
+                        stroke-width="2"
+                        stroke-dasharray="4 4"
+                      />
+                      <path
+                        d="M400 234 Q462 272 502 300"
+                        fill="none"
+                        stroke="var(--green)"
+                        stroke-width="2"
+                        marker-end="url(#er-arrow-green)"
+                      />
+                      <path
+                        d="M506 356 Q470 384 424 365"
+                        fill="none"
+                        stroke="var(--green)"
+                        stroke-width="2"
+                        marker-end="url(#er-arrow-green)"
+                      />
+
+                      <!-- Top-left: QuickBooks -->
+                      <g>
+                        <rect
+                          x="34"
+                          y="44"
+                          width="150"
+                          height="58"
+                          rx="10"
+                          fill="var(--bg-card)"
+                          stroke="var(--border)"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="34"
+                          y="44"
+                          width="4"
+                          height="58"
+                          rx="2"
+                          fill="var(--blue)"
+                        />
+                        <text
+                          x="52"
+                          y="70"
+                          fill="var(--text)"
+                          font-family="var(--font-display)"
+                          font-weight="600"
+                          font-size="15"
+                        >
+                          QuickBooks
+                        </text>
+                        <text
+                          x="52"
+                          y="88"
+                          fill="var(--text-3)"
+                          font-family="var(--font-mono)"
+                          font-size="11"
+                        >
+                          finished jobs
+                        </text>
+                      </g>
+
+                      <!-- Top-right: Cron -->
+                      <g>
+                        <rect
+                          x="456"
+                          y="44"
+                          width="150"
+                          height="58"
+                          rx="10"
+                          fill="var(--bg-card)"
+                          stroke="var(--border)"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="602"
+                          y="44"
+                          width="4"
+                          height="58"
+                          rx="2"
+                          fill="var(--red)"
+                        />
+                        <text
+                          x="474"
+                          y="70"
+                          fill="var(--text)"
+                          font-family="var(--font-display)"
+                          font-weight="600"
+                          font-size="15"
+                        >
+                          Cron schedule
+                        </text>
+                        <text
+                          x="474"
+                          y="88"
+                          fill="var(--text-3)"
+                          font-family="var(--font-mono)"
+                          font-size="11"
+                        >
+                          runs unattended
+                        </text>
+                      </g>
+
+                      <!-- Center hub: EasyReview -->
+                      <g>
+                        <rect
+                          x="232"
+                          y="165"
+                          width="176"
+                          height="70"
+                          rx="12"
+                          fill="var(--red-soft)"
+                          stroke="var(--red)"
+                          stroke-width="2"
+                        />
+                        <circle cx="248" cy="181" r="4" fill="var(--red)" />
+                        <text
+                          x="320"
+                          y="197"
+                          text-anchor="middle"
+                          fill="var(--text)"
+                          font-family="var(--font-display)"
+                          font-weight="700"
+                          font-size="18"
+                        >
+                          EasyReview
+                        </text>
+                        <text
+                          x="320"
+                          y="216"
+                          text-anchor="middle"
+                          fill="var(--red)"
+                          font-family="var(--font-mono)"
+                          font-size="11"
+                        >
+                          automation engine
+                        </text>
+                      </g>
+
+                      <!-- Bottom-left: Supabase -->
+                      <g>
+                        <rect
+                          x="34"
+                          y="298"
+                          width="150"
+                          height="58"
+                          rx="10"
+                          fill="var(--bg-card)"
+                          stroke="var(--border)"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="34"
+                          y="298"
+                          width="4"
+                          height="58"
+                          rx="2"
+                          fill="var(--text-3)"
+                        />
+                        <text
+                          x="52"
+                          y="324"
+                          fill="var(--text)"
+                          font-family="var(--font-display)"
+                          font-weight="600"
+                          font-size="15"
+                        >
+                          Supabase
+                        </text>
+                        <text
+                          x="52"
+                          y="342"
+                          fill="var(--text-3)"
+                          font-family="var(--font-mono)"
+                          font-size="11"
+                        >
+                          customers + state
+                        </text>
+                      </g>
+
+                      <!-- Bottom-right: SMS -->
+                      <g>
+                        <rect
+                          x="456"
+                          y="298"
+                          width="150"
+                          height="58"
+                          rx="10"
+                          fill="var(--bg-card)"
+                          stroke="var(--border)"
+                          stroke-width="1.5"
+                        />
+                        <rect
+                          x="602"
+                          y="298"
+                          width="4"
+                          height="58"
+                          rx="2"
+                          fill="var(--green)"
+                        />
+                        <text
+                          x="474"
+                          y="324"
+                          fill="var(--text)"
+                          font-family="var(--font-display)"
+                          font-weight="600"
+                          font-size="15"
+                        >
+                          SMS request
+                        </text>
+                        <text
+                          x="474"
+                          y="342"
+                          fill="var(--text-3)"
+                          font-family="var(--font-mono)"
+                          font-size="11"
+                        >
+                          Playwright send
+                        </text>
+                      </g>
+
+                      <!-- Outcome pill: Google review -->
+                      <g>
+                        <rect
+                          x="220"
+                          y="344"
+                          width="200"
+                          height="40"
+                          rx="20"
+                          fill="none"
+                          stroke="var(--green)"
+                          stroke-width="1.5"
+                        />
+                        <text
+                          x="320"
+                          y="369"
+                          text-anchor="middle"
+                          fill="var(--green)"
+                          font-family="var(--font-mono)"
+                          font-weight="500"
+                          font-size="13"
+                        >
+                          ★ Google review
+                        </text>
+                      </g>
+                    </svg>
                   </div>
                 </div>
               </article>
@@ -617,6 +941,65 @@
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <!--
+        WORK IN PROGRESS: these are the certs Alyan is studying toward.
+        To add an earned one, copy a .cert-card block, swap the text, and
+        change  data-status="progress"  to  data-status="earned"  (that flips
+        the pill to green and drops the dashed border). Edit the names below
+        to match what you're actually pursuing.
+      -->
+      <section id="certifications" class="section">
+        <div class="container">
+          <span class="section-label">~/certifications · in progress</span>
+          <h2 class="section-title reveal reveal-title">Certifications</h2>
+          <p class="cert-note reveal">
+            Currently studying toward these. Each card fills in as I earn it.
+          </p>
+
+          <div class="cert-grid">
+            <article class="cert-card reveal" data-status="progress">
+              <div class="cert-card-top">
+                <span class="cert-icon" aria-hidden="true">🛡️</span>
+                <span class="cert-status">
+                  <span class="cert-status-dot" aria-hidden="true"></span>
+                  In progress
+                </span>
+              </div>
+              <h3 class="cert-name">CompTIA Security+</h3>
+              <p class="cert-issuer">CompTIA · SY0-701</p>
+              <p class="cert-detail">Studying now · exam targeted for 2026</p>
+            </article>
+
+            <article class="cert-card reveal" data-status="progress">
+              <div class="cert-card-top">
+                <span class="cert-icon" aria-hidden="true">🌐</span>
+                <span class="cert-status">
+                  <span class="cert-status-dot" aria-hidden="true"></span>
+                  In progress
+                </span>
+              </div>
+              <h3 class="cert-name">CompTIA Network+</h3>
+              <p class="cert-issuer">CompTIA · N10-009</p>
+              <p class="cert-detail">Building the networking foundation</p>
+            </article>
+
+            <article class="cert-card reveal" data-status="progress">
+              <div class="cert-card-top">
+                <span class="cert-icon" aria-hidden="true">🔐</span>
+                <span class="cert-status">
+                  <span class="cert-status-dot" aria-hidden="true"></span>
+                  In progress
+                </span>
+              </div>
+              <h3 class="cert-name">ISC2 Certified in Cybersecurity</h3>
+              <p class="cert-issuer">ISC2 · CC</p>
+              <p class="cert-detail">Entry-level security fundamentals</p>
+            </article>
           </div>
         </div>
       </section>

@@ -924,6 +924,22 @@ html.js .ticker-track {
   transform: scale(1.045);
 }
 
+/* EasyReview flow diagram, reused as a card thumbnail and full-size in-page */
+.featured-media-diagram {
+  background: var(--bg-raised);
+}
+
+.flow-diagram {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.featured-card:hover .featured-media-diagram .flow-diagram {
+  transform: scale(1.03);
+}
+
 /* ========== Project grid ========== */
 .projects-grid {
   display: grid;
@@ -977,6 +993,100 @@ html.js .ticker-track {
   color: var(--text-2);
   flex-grow: 1;
   margin-bottom: 1.25rem;
+}
+
+/* ========== Certifications ========== */
+.cert-note {
+  color: var(--text-2);
+  margin-bottom: 2rem;
+  max-width: 52ch;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.cert-card {
+  background: var(--bg-card);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition:
+    border-color var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.cert-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-sm);
+}
+
+/* Earned certs read as solid + settled, not dashed placeholders */
+.cert-card[data-status="earned"] {
+  border-style: solid;
+  border-color: var(--border);
+}
+
+.cert-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.cert-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  filter: grayscale(0.2);
+}
+
+.cert-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--blue);
+  background: var(--blue-soft);
+  border-radius: var(--radius-full);
+  padding: 0.25rem 0.7rem;
+}
+
+.cert-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.cert-card[data-status="earned"] .cert-status {
+  color: var(--green);
+  background: var(--green-glow);
+}
+
+.cert-card[data-status="earned"] .cert-status-dot {
+  background: var(--green);
+}
+
+.cert-name {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-3);
+  margin-bottom: 0.8rem;
+}
+
+.cert-detail {
+  font-size: var(--text-sm);
+  color: var(--text-2);
 }
 
 /* ========== Experience / Involvement: git log ========== */
@@ -1136,7 +1246,7 @@ a.timeline-link:hover .timeline-cta .arrow {
 /* ========== About ========== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
@@ -1241,10 +1351,10 @@ a.timeline-link:hover .timeline-cta .arrow {
 .ascii-pre {
   display: none;
   font-family: var(--font-mono);
-  /* 96 columns × 0.6em mono advance fill the container width exactly */
-  font-size: calc(100cqw / 57.6);
+  /* 120 columns × 0.6em mono advance fill the container width exactly */
+  font-size: calc(100cqw / 72);
   line-height: 1;
-  aspect-ratio: 1.6; /* wider + shorter than the square source */
+  aspect-ratio: 1.6; /* matches the 1.6 source crop */
   overflow: hidden;
   white-space: pre;
   color: var(--text);
@@ -1528,6 +1638,61 @@ html.js .ascii-gen.generating .ascii-media::after {
   object-fit: cover;
 }
 
+/* EasyReview flow diagram, full-size inside the case study */
+.project-flow-section {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 2rem var(--gutter);
+}
+
+.flow-figure {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-raised);
+}
+
+.flow-figure-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+.flow-figure-bar .dots {
+  display: flex;
+  gap: 5px;
+}
+
+.flow-figure-bar .dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+}
+
+.flow-figure-bar .dots span:first-child {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.flow-figure .flow-diagram {
+  display: block;
+  width: 100%;
+  padding: 1rem clamp(0.5rem, 3vw, 1.5rem);
+}
+
+.flow-figure figcaption {
+  padding: 0 1.25rem 1.25rem;
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  max-width: 62ch;
+}
+
 .project-content-section {
   padding: 2rem 0;
 }
@@ -1745,7 +1910,8 @@ html.js .reveal.reveal-title.visible {
     grid-template-columns: 1fr;
   }
 
-  .projects-grid {
+  .projects-grid,
+  .cert-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1787,7 +1953,8 @@ html.js .reveal.reveal-title.visible {
   }
 
   .projects-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .cert-grid {
     grid-template-columns: 1fr;
   }
 

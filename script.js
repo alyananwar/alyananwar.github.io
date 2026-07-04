@@ -314,8 +314,8 @@ const asciiFigure = document.querySelector(".ascii-gen");
 const asciiPre = document.getElementById("ascii-pre");
 
 if (asciiFigure && asciiPre) {
-  const COLS = 96;
-  const ROWS = 36; // COLS × 0.6 mono advance ÷ 1.6 display aspect
+  const COLS = 120;
+  const ROWS = 45; // COLS × 0.6 mono advance ÷ 1.6 display aspect
   const RAMP = " .:-=+*#%@";
   const GEN_DURATION = 2600; // matches the scanSweep / asciiReveal CSS timing
   let asciiLines = null;
@@ -333,7 +333,8 @@ if (asciiFigure && asciiPre) {
     let sw = img.naturalWidth;
     let sh = sw / targetAspect;
     let sx = 0;
-    let sy = Math.min(img.naturalHeight - sh, img.naturalHeight * 0.1);
+    // Keep the very top of the frame so the full head stays in the crop
+    let sy = Math.max(0, Math.min(img.naturalHeight - sh, 0));
     if (sh > img.naturalHeight) {
       sh = img.naturalHeight;
       sw = sh * targetAspect;
