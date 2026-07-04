@@ -914,6 +914,7 @@ html.js .ticker-track {
 
 .featured-media img {
   width: 100%;
+  height: auto; /* let aspect-ratio drive height; ignore the HTML height attr */
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top;
@@ -922,6 +923,12 @@ html.js .ticker-track {
 
 .featured-card:hover .featured-media img {
   transform: scale(1.045);
+}
+
+/* Wide screenshots (e.g. CyberPartner's dual-pane) render shorter and uncropped */
+.featured-media-wide img {
+  aspect-ratio: 1872 / 840;
+  object-position: center;
 }
 
 /* EasyReview flow diagram, reused as a card thumbnail and full-size in-page */
@@ -1372,7 +1379,6 @@ html.js .ascii-gen.ascii-ready .ascii-media img {
 
 html.js .ascii-gen:not(.ascii-ready) .ascii-media img {
   clip-path: inset(0 0 100% 0);
-  filter: brightness(1.4) contrast(1.3);
 }
 
 html.js .ascii-gen.visible:not(.ascii-ready) .ascii-media img {
@@ -1382,8 +1388,12 @@ html.js .ascii-gen.visible:not(.ascii-ready) .ascii-media img {
 @keyframes asciiReveal {
   to {
     clip-path: inset(0 0 0 0);
-    filter: brightness(1) contrast(1);
   }
+}
+
+/* Portrait is white-on-dark; flip it to dark-on-paper in the light theme */
+[data-theme="light"] .ascii-media img {
+  filter: invert(1);
 }
 
 .ascii-media::after {
@@ -2007,7 +2017,6 @@ html.js .reveal.reveal-title.visible {
 
   html.js .ascii-gen:not(.ascii-ready) .ascii-media img {
     clip-path: none;
-    filter: none;
   }
 
   .ascii-media::after {
