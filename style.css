@@ -1353,6 +1353,7 @@ a.timeline-link:hover .timeline-cta .arrow {
 
 .ascii-media img {
   display: block;
+  height: auto; /* keep the source aspect; ignore the HTML height attr */
 }
 
 .ascii-pre {
