@@ -114,17 +114,22 @@ function renderNameCanvas() {
 }
 
 if (nameCanvas) {
-  document.fonts.ready.then(renderNameCanvas);
-  document.addEventListener("themechange", renderNameCanvas);
-  let resizeTimer;
-  window.addEventListener(
-    "resize",
-    () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(renderNameCanvas, 150);
-    },
-    { passive: true },
-  );
+  document.fonts.ready.then(() => {
+    // Liquid-chrome shader (liquid-name.js) owns the canvas when WebGL2 is
+    // available; the dot-matrix renderer stays as the fallback.
+    if (window.initLiquidName && window.initLiquidName(nameCanvas)) return;
+    renderNameCanvas();
+    document.addEventListener("themechange", renderNameCanvas);
+    let resizeTimer;
+    window.addEventListener(
+      "resize",
+      () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderNameCanvas, 150);
+      },
+      { passive: true },
+    );
+  });
 }
 
 // ── Landing zoom-through controller ──────────────────────────────────────────

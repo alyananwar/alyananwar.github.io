@@ -555,6 +555,11 @@ html.js .runway {
   height: auto;
 }
 
+/* Chrome highlights melt into warm paper; a soft contour keeps the name legible */
+[data-theme="light"] #name-canvas {
+  filter: drop-shadow(0 2px 6px rgba(27, 26, 20, 0.35));
+}
+
 /* Floating stickers */
 .sticker {
   position: absolute;
@@ -2038,5 +2043,59 @@ html.js .reveal.reveal-title.visible {
 
   .scroll-progress {
     display: none;
+  }
+}
+
+/* ========== Y2K chrome accent text ========== */
+/* Pairs with the liquid-metal name shader (liquid-name.js). Guarded so
+   browsers without background-clip:text keep the pop red/blue colors. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .chrome-text,
+  .intro-title .chrome-text {
+    background-image: linear-gradient(
+      100deg,
+      #e8e8ee 0%,
+      #ffffff 14%,
+      #8e8e98 28%,
+      #fdfdff 42%,
+      #52525c 55%,
+      #eeeef4 68%,
+      #9c9ca6 82%,
+      #e8e8ee 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: chrome-shift 6s linear infinite;
+  }
+
+  /* Deeper darks so the silver reads on warm paper */
+  [data-theme="light"] .chrome-text,
+  [data-theme="light"] .intro-title .chrome-text {
+    background-image: linear-gradient(
+      100deg,
+      #b4b4be 0%,
+      #f2f2f6 14%,
+      #565660 28%,
+      #e6e6ec 42%,
+      #2c2c34 55%,
+      #c4c4ce 68%,
+      #6a6a74 82%,
+      #b4b4be 100%
+    );
+  }
+
+  .footer-name.chrome-text,
+  .footer-name.chrome-text:hover {
+    -webkit-text-stroke-color: transparent;
+  }
+}
+
+@keyframes chrome-shift {
+  to {
+    /* full period of the 200%-wide gradient, so the loop is seamless */
+    background-position: 200% center;
   }
 }
