@@ -2096,3 +2096,156 @@ html.js .reveal.reveal-title.visible {
     background-position: 200% center;
   }
 }
+
+/* ── Connect dialog ─────────────────────────────────────────────────────────── */
+.connect-dialog {
+  margin: auto; /* the global reset zeroes margins; dialogs need auto to center */
+  width: min(560px, calc(100vw - 2rem));
+  max-height: calc(100vh - 4rem);
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+}
+
+.connect-dialog::backdrop {
+  background: var(--overlay);
+  backdrop-filter: blur(3px);
+}
+
+.connect-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+.connect-bar .dots {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.connect-bar .dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.connect-bar .dots span:first-child {
+  background: var(--red);
+}
+
+.connect-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.connect-close:hover {
+  color: var(--red);
+}
+
+.connect-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 4rem - 2.4rem); /* dialog cap minus frame bar */
+}
+
+.connect-intro {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  margin-bottom: 1rem;
+}
+
+.connect-intro a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem 0.9rem;
+}
+
+.connect-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+.connect-wide {
+  grid-column: 1 / -1;
+}
+
+.connect-grid input,
+.connect-grid select,
+.connect-grid textarea {
+  font: inherit;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+}
+
+.connect-grid input:focus-visible,
+.connect-grid select:focus-visible,
+.connect-grid textarea:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+.connect-turnstile {
+  margin-top: 0.9rem;
+}
+
+.connect-turnstile:empty {
+  display: none;
+}
+
+.connect-error {
+  margin-top: 0.8rem;
+  font-size: var(--text-sm);
+  color: var(--red);
+}
+
+.connect-submit {
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.connect-success {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.connect-success p:first-child {
+  font-size: var(--text-lg);
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 540px) {
+  .connect-grid {
+    grid-template-columns: 1fr;
+  }
+}
