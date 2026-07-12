@@ -1397,10 +1397,7 @@ html.js .ascii-gen.visible:not(.ascii-ready) .ascii-media img {
   }
 }
 
-/* Portrait is white-on-dark; flip it to dark-on-paper in the light theme */
-[data-theme="light"] .ascii-media img {
-  filter: invert(1);
-}
+/* Color portrait works in both themes; no invert needed */
 
 .ascii-media::after {
   content: "";

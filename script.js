@@ -315,7 +315,7 @@ if (window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion) {
 }
 
 // ── ASCII portrait ────────────────────────────────────────────────────────────
-// The portrait is a pre-rendered ASCII-art image (images/ascii-1.png),
+// The portrait is a pre-rendered ASCII-art image (images/ascii-color.png),
 // displayed directly so its fine detail survives. The scanline clip-path reveal
 // is driven purely by CSS off the figure's `.reveal.visible` state, so there is
 // no canvas re-sampling here (down-sampling detailed line art only muddies it).
