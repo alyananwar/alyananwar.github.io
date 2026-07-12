@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy · Alyan Anwar</title>
+    <meta
+      name="description"
+      content="What this site collects and why: anonymous visit analytics, and contact info only if you choose to share it."
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="canonical" href="https://alyananwar.github.io/privacy.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#0d0d0f" />
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "light")
+          document.documentElement.setAttribute("data-theme", "light");
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <main
+      class="container"
+      style="max-width: 720px; padding-top: 7rem; padding-bottom: 5rem"
+    >
+      <span class="section-label">~/privacy</span>
+      <h1 style="margin-bottom: 2rem">Privacy</h1>
+
+      <h3 style="margin: 1.5rem 0 0.5rem">What this site collects</h3>
+      <p>
+        This site keeps lightweight, anonymous analytics so I can see which
+        projects people find interesting: pages viewed, time on page, scroll
+        depth, referrer, rough location (city/country from the network, never
+        your IP), browser and device type, and a random identifier stored in
+        your browser. No cookies, no fingerprinting, no ad networks, and your IP
+        address is never stored. If your browser sends Do Not Track, nothing is
+        collected at all.
+      </p>
+
+      <h3 style="margin: 1.5rem 0 0.5rem">The Connect form</h3>
+      <p>
+        Anything you type into the Connect form (name, email, company, message,
+        and so on) is shared voluntarily and visible only to me. If analytics
+        were active, your form submission is linked to your anonymous visit
+        history so I have context when I follow up. I use this information only
+        to reply and keep in touch — it is never sold or shared.
+      </p>
+
+      <h3 style="margin: 1.5rem 0 0.5rem">AI processing</h3>
+      <p>
+        To help me follow up thoughtfully, information you share plus your
+        on-site activity may be summarized by AI services. Only data you
+        provided or generated on this site is used.
+      </p>
+
+      <h3 style="margin: 1.5rem 0 0.5rem">Deletion</h3>
+      <p>
+        Want your info gone? Email
+        <a href="mailto:a_anwar5@u.pacific.edu" style="color: var(--blue)"
+          >a_anwar5@u.pacific.edu</a
+        >
+        and I'll delete your contact record and any linked visit history. Raw
+        analytics events are automatically deleted after 180 days regardless.
+      </p>
+
+      <p style="margin-top: 3rem">
+        <a href="index.html" style="color: var(--blue)"
+          >&larr; back to the site</a
+        >
+      </p>
+    </main>
+    <script src="net.js" defer></script>
+  </body>
+</html>

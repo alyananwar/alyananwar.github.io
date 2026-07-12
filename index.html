@@ -1424,6 +1424,9 @@
           <div class="contact-content reveal">
             <p>Any questions? Email me or message me on LinkedIn.</p>
             <div class="contact-buttons">
+              <button type="button" class="contact-btn" data-connect hidden>
+                Connect with me
+              </button>
               <a
                 href="mailto:a_anwar5@u.pacific.edu"
                 class="contact-btn"
@@ -1503,9 +1506,109 @@
         rel="noopener"
         >view source ↗</a
       >
+      <a href="privacy.html">privacy</a>
     </footer>
+
+    <!-- Connect dialog (revealed by connect.js once the backend is live) -->
+    <dialog class="connect-dialog" id="connect-dialog">
+      <div class="connect-bar">
+        <span class="dots" aria-hidden="true"
+          ><span></span><span></span><span></span
+        ></span>
+        <span>connect.form</span>
+        <button type="button" class="connect-close" aria-label="Close">
+          ×
+        </button>
+      </div>
+      <div class="connect-body">
+        <p class="connect-intro">
+          Leave your info and I'll follow up. Only what you type here is shared
+          with me. <a href="privacy.html" target="_blank">privacy</a>
+        </p>
+        <form novalidate>
+          <div class="connect-grid">
+            <label
+              >name *
+              <input name="name" required maxlength="100" autocomplete="name" />
+            </label>
+            <label
+              >email *
+              <input
+                name="email"
+                type="email"
+                required
+                maxlength="254"
+                autocomplete="email"
+              />
+            </label>
+            <label
+              >company / organization
+              <input
+                name="company"
+                maxlength="200"
+                autocomplete="organization"
+              />
+            </label>
+            <label
+              >job title
+              <input
+                name="title"
+                maxlength="200"
+                autocomplete="organization-title"
+              />
+            </label>
+            <label
+              >linkedin
+              <input
+                name="linkedin"
+                type="url"
+                maxlength="200"
+                placeholder="linkedin.com/in/…"
+              />
+            </label>
+            <label
+              >website
+              <input name="website" type="url" maxlength="200" />
+            </label>
+            <label class="connect-wide"
+              >how did you find me?
+              <select name="found_via">
+                <option value=""></option>
+                <option>LinkedIn</option>
+                <option>GitHub</option>
+                <option>Career fair</option>
+                <option>Referral</option>
+                <option>Search</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="connect-wide"
+              >interests
+              <input
+                name="interests"
+                maxlength="500"
+                placeholder="cybersecurity, AI, hiring…"
+              />
+            </label>
+            <label class="connect-wide"
+              >message
+              <textarea name="message" rows="3" maxlength="2000"></textarea>
+            </label>
+          </div>
+          <div class="connect-turnstile"></div>
+          <p class="connect-error" role="alert" hidden></p>
+          <button type="submit" class="btn connect-submit">Send</button>
+        </form>
+        <div class="connect-success" hidden>
+          <p><strong>Thanks for connecting!</strong></p>
+          <p>I'll get back to you soon.</p>
+        </div>
+      </div>
+    </dialog>
 
     <script src="liquid-name.js"></script>
     <script src="script.js"></script>
+    <script src="net.js" defer></script>
+    <script src="connect.js" defer></script>
   </body>
 </html>
