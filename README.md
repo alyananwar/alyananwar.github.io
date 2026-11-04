@@ -1,6 +1,6 @@
 # alyananwar.github.io
 
-**My portfolio site. Hand-written HTML, CSS, and JavaScript, no framework, hosted on GitHub Pages.**
+**My portfolio site. Vibe-Coded HTML, CSS, and JavaScript, no framework, hosted on GitHub Pages.**
 
 <p align="center">
   <img src="docs/demo.gif" alt="Scrolling through the portfolio site: hero, projects, experience, and about" width="800">
