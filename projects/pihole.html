@@ -3,209 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pi-hole DNS Server — Alyan Anwar</title>
+    <title>Pi-hole DNS Server · Alyan</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#0d0d0f" />
-    <!-- Theme boot: apply stored light theme before first paint (dark is default) -->
-    <script>
-      try {
-        if (localStorage.getItem("theme") === "light")
-          document.documentElement.setAttribute("data-theme", "light");
-      } catch (e) {}
-    </script>
-    <link rel="stylesheet" href="../style.css" />
+    <meta name="theme-color" content="#f4f2ee" />
+    <link rel="stylesheet" href="../site.css" />
   </head>
   <body>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="../index.html" class="nav-logo">~/alyan</a>
-      <div class="nav-links">
-        <a href="../index.html#work">Work</a>
-        <a href="../index.html#experience">Experience</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
-        <a
-          href="../resume.pdf"
-          target="_blank"
-          rel="noopener"
-          class="nav-resume-btn"
-          >Resume</a
-        >
-      </div>
-      <button
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Switch to light theme"
-        aria-pressed="false"
-      >
-        <svg
-          class="icon-sun"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-          />
-        </svg>
-        <svg
-          class="icon-moon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true">
+      <div
+        class="backdrop-layer is-on"
+        style="background-image: url(../images/bg/waterspout.jpg)"
+      ></div>
+      <div class="backdrop-layer"></div>
+    </div>
+
+    <div class="panel">
+      <header class="bar">
+        <a href="../index.html" class="bar-name">Alyan</a>
+        <nav class="bar-links" aria-label="Main navigation">
+          <a href="../index.html#work">Work</a>
+          <a class="bar-more" href="../index.html#experience">Experience</a>
+          <a class="bar-more" href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+          <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </header>
+
+      <main id="main" class="sheet project">
+        <!-- Hero -->
+        <section class="project-page-hero">
+          <a href="../index.html#work" class="back-link">← All work</a>
+          <h1 class="project-page-title">Pi-hole DNS Server</h1>
+          <p class="project-page-subtitle">
+            Built a network-wide ad and tracker blocker using a Raspberry Pi and
+            custom enclosure, integrated directly into the home network.
+          </p>
+          <div class="project-page-tags">
+            <span>Networking</span>
+            <span>Raspberry Pi</span>
+            <span>DNS</span>
+            <span>Linux</span>
+            <span>Security</span>
+          </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="project-gallery-section">
+          <p class="section-label">Photos</p>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="../images/projects/pihole/raspberry-pi.jpg"
+                alt="Raspberry Pi with custom enclosure"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="../images/projects/pihole/dashboard.png"
+                alt="Pi-hole dashboard: 347,087 domains blocked"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-content-section">
+          <div class="project-content-inner">
+          <div class="cs-row">
+            <h2>Overview</h2>
+            <div class="cs-body">
+            <p>
+              <!-- Edit this text -->
+              In January 2026, I set up a Pi-hole DNS sinkhole on a Raspberry Pi
+              and integrated it into my home network as the primary DNS server.
+              Pi-hole intercepts DNS queries and blocks known ad-serving and
+              tracking domains before they even load.
+            </p>
+            <p>
+              I also built a custom enclosure for the Pi to keep it clean and
+              protected. The whole thing runs 24/7 and handles DNS for every
+              device on the network, phones, laptops, smart TVs, everything.
+            </p>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>How It Works</h2>
+            <div class="cs-body">
+            <ul>
+              <!-- Edit this list -->
+              <li>
+                Raspberry Pi acts as the DNS resolver for the entire home
+                network
+              </li>
+              <li>
+                Queries for known ad/tracker domains are blocked at the DNS
+                level
+              </li>
+              <li>
+                Pi-hole dashboard shows real-time stats on blocked queries
+              </li>
+              <li>Custom blocklists added on top of the defaults</li>
+              <li>
+                Static IP assigned so the router always routes DNS through it
+              </li>
+            </ul>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>What I Learned</h2>
+            <div class="cs-body">
+            <ul>
+              <!-- Edit this list -->
+              <li>DNS fundamentals and how resolvers work</li>
+              <li>Linux server setup and SSH administration</li>
+              <li>
+                Home network configuration (static IPs, router DNS settings)
+              </li>
+              <li>Hands-on Raspberry Pi hardware setup</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <div class="project-footer-nav">
+          <a href="../index.html#work">← All work</a>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>© 2026 Alyan Anwar</p>
+        <p>
+          <a
+            href="https://github.com/alyananwar/alyananwar.github.io"
+            target="_blank"
+            rel="noopener"
+            >Source</a
+          >
+          <a href="../privacy.html">Privacy</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="window window-end" data-bg="../images/bg/waterspout.jpg">
+      <p class="credit">Gustave Courbet, Marine: The Waterspout, 1870</p>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo">
+      <button type="button" class="lightbox-close" aria-label="Close">
+        Close
       </button>
-    </nav>
+      <img alt="" />
+      <p class="lightbox-cap"></p>
+    </dialog>
 
-    <!-- Hero -->
-    <section class="project-page-hero">
-      <a href="../index.html#projects" class="back-link"
-        >&#8592; Back to Projects</a
-      >
-      <h1 class="project-page-title">Pi-hole DNS Server</h1>
-      <p class="project-page-subtitle">
-        Built a network-wide ad and tracker blocker using a Raspberry Pi and
-        custom enclosure — integrated directly into the home network.
-      </p>
-      <div class="project-page-tags">
-        <span>Networking</span>
-        <span>Raspberry Pi</span>
-        <span>DNS</span>
-        <span>Linux</span>
-        <span>Security</span>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="project-gallery-section">
-      <p class="section-label">Photos</p>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="../images/projects/pihole/raspberry-pi.jpg"
-            alt="Raspberry Pi with custom enclosure"
-          />
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="../images/projects/pihole/dashboard.png"
-            alt="Pi-hole dashboard — 347,087 domains blocked"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightbox-close">&times;</button>
-      <img src="" alt="" id="lightbox-img" />
-    </div>
-
-    <!-- Overview -->
-    <section class="project-content-section">
-      <div class="project-content-inner">
-        <h2>Overview</h2>
-        <p>
-          <!-- Edit this text -->
-          In January 2026, I set up a Pi-hole DNS sinkhole on a Raspberry Pi and
-          integrated it into my home network as the primary DNS server. Pi-hole
-          intercepts DNS queries and blocks known ad-serving and tracking
-          domains before they even load.
-        </p>
-        <p>
-          I also built a custom enclosure for the Pi to keep it clean and
-          protected. The whole thing runs 24/7 and handles DNS for every device
-          on the network — phones, laptops, smart TVs, everything.
-        </p>
-
-        <h2>How It Works</h2>
-        <ul>
-          <!-- Edit this list -->
-          <li>
-            Raspberry Pi acts as the DNS resolver for the entire home network
-          </li>
-          <li>
-            Queries for known ad/tracker domains are blocked at the DNS level
-          </li>
-          <li>Pi-hole dashboard shows real-time stats on blocked queries</li>
-          <li>Custom blocklists added on top of the defaults</li>
-          <li>Static IP assigned so the router always routes DNS through it</li>
-        </ul>
-
-        <h2>What I Learned</h2>
-        <ul>
-          <!-- Edit this list -->
-          <li>DNS fundamentals and how resolvers work</li>
-          <li>Linux server setup and SSH administration</li>
-          <li>Home network configuration (static IPs, router DNS settings)</li>
-          <li>Hands-on Raspberry Pi hardware setup</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Documents -->
-    <section class="project-docs-section">
-      <p class="section-label">Documents</p>
-      <div class="docs-grid">
-        <p class="doc-placeholder">
-          Drop documents into docs/ and add links here.
-        </p>
-      </div>
-    </section>
-
-    <div class="project-footer-nav">
-      <a href="../index.html#projects">&#8592; Back to all projects</a>
-    </div>
-
-    <footer class="footer">
-      <p>Designed &amp; Built by Alyan Anwar</p>
-    </footer>
-
-    <script src="../script.js"></script>
+    <script src="../site.js"></script>
     <script src="../net.js" defer></script>
-    <script>
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      document.querySelectorAll(".gallery-item img").forEach((img) => {
-        img.style.cursor = "zoom-in";
-        img.addEventListener("click", () => {
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightbox.classList.add("active");
-        });
-      });
-      document
-        .getElementById("lightbox-close")
-        .addEventListener("click", () => lightbox.classList.remove("active"));
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("active");
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") lightbox.classList.remove("active");
-      });
-    </script>
   </body>
 </html>

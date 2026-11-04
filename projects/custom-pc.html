@@ -3,199 +3,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom PC Building — Alyan Anwar</title>
+    <title>Custom PC Building · Alyan</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#0d0d0f" />
-    <!-- Theme boot: apply stored light theme before first paint (dark is default) -->
-    <script>
-      try {
-        if (localStorage.getItem("theme") === "light")
-          document.documentElement.setAttribute("data-theme", "light");
-      } catch (e) {}
-    </script>
-    <link rel="stylesheet" href="../style.css" />
+    <meta name="theme-color" content="#f4f2ee" />
+    <link rel="stylesheet" href="../site.css" />
   </head>
   <body>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="../index.html" class="nav-logo">~/alyan</a>
-      <div class="nav-links">
-        <a href="../index.html#work">Work</a>
-        <a href="../index.html#experience">Experience</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
-        <a
-          href="../resume.pdf"
-          target="_blank"
-          rel="noopener"
-          class="nav-resume-btn"
-          >Resume</a
-        >
-      </div>
-      <button
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Switch to light theme"
-        aria-pressed="false"
-      >
-        <svg
-          class="icon-sun"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-          />
-        </svg>
-        <svg
-          class="icon-moon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true">
+      <div
+        class="backdrop-layer is-on"
+        style="background-image: url(../images/bg/wheat-fields.jpg)"
+      ></div>
+      <div class="backdrop-layer"></div>
+    </div>
+
+    <div class="panel">
+      <header class="bar">
+        <a href="../index.html" class="bar-name">Alyan</a>
+        <nav class="bar-links" aria-label="Main navigation">
+          <a href="../index.html#work">Work</a>
+          <a class="bar-more" href="../index.html#experience">Experience</a>
+          <a class="bar-more" href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+          <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </header>
+
+      <main id="main" class="sheet project">
+        <!-- Hero -->
+        <section class="project-page-hero">
+          <a href="../index.html#work" class="back-link">← All work</a>
+          <h1 class="project-page-title">Custom PC Building Business</h1>
+          <p class="project-page-subtitle">
+            Consulting, sourcing, building, and supporting custom PC systems,
+            from gaming rigs to workstations.
+          </p>
+          <div class="project-page-tags">
+            <span>Hardware</span>
+            <span>Consulting</span>
+            <span>Entrepreneurship</span>
+            <span>Diagnostics & Repair</span>
+          </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="project-gallery-section">
+          <p class="section-label">Photos</p>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="../images/projects/custom-pc/build-1-rtx-top.jpg"
+                alt="Custom RTX build: top-down view"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="../images/projects/custom-pc/build-2-rtx3080-detail.jpg"
+                alt="RTX 3080 Founders Edition with NZXT AIO and RGB RAM"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="../images/projects/custom-pc/build-3-white-aio.jpg"
+                alt="White case build with NZXT liquid cooler and Gigabyte GPU"
+              />
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="../images/projects/custom-pc/build-4-cable-mgmt.jpg"
+                alt="Clean cable management on back panel of white build"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="project-content-section">
+          <div class="project-content-inner">
+          <div class="cs-row">
+            <h2>Overview</h2>
+            <div class="cs-body">
+            <p>
+              Founded and operate a custom PC building service, working with
+              clients to understand their needs and delivering builds tailored
+              to their budget and use case, gaming, video editing, workstations,
+              and more.
+            </p>
+            <p>
+              Every build starts with a consultation, followed by component
+              sourcing, assembly, testing, and post-build support. The goal is
+              always a clean, reliable machine the client can actually use.
+            </p>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>What I Do</h2>
+            <div class="cs-body">
+            <ul>
+              <li>Consult with clients on their needs and budget</li>
+              <li>
+                Source and compare components for the best price-to-performance
+              </li>
+              <li>Full assembly, cable management, and BIOS setup</li>
+              <li>OS installation and driver configuration</li>
+              <li>Ongoing support and upgrades after delivery</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <div class="project-footer-nav">
+          <a href="../index.html#work">← All work</a>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>© 2026 Alyan Anwar</p>
+        <p>
+          <a
+            href="https://github.com/alyananwar/alyananwar.github.io"
+            target="_blank"
+            rel="noopener"
+            >Source</a
+          >
+          <a href="../privacy.html">Privacy</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="window window-end" data-bg="../images/bg/wheat-fields.jpg">
+      <p class="credit">Jacob van Ruisdael, Wheat Fields, ca. 1670</p>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo">
+      <button type="button" class="lightbox-close" aria-label="Close">
+        Close
       </button>
-    </nav>
+      <img alt="" />
+      <p class="lightbox-cap"></p>
+    </dialog>
 
-    <!-- Hero -->
-    <section class="project-page-hero">
-      <a href="../index.html#projects" class="back-link"
-        >&#8592; Back to Projects</a
-      >
-      <h1 class="project-page-title">Custom PC Building Business</h1>
-      <p class="project-page-subtitle">
-        Consulting, sourcing, building, and supporting custom PC systems — from
-        gaming rigs to workstations.
-      </p>
-      <div class="project-page-tags">
-        <span>Hardware</span>
-        <span>Consulting</span>
-        <span>Entrepreneurship</span>
-        <span>Diagnostics & Repair</span>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="project-gallery-section">
-      <p class="section-label">Photos</p>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img
-            src="../images/projects/custom-pc/build-1-rtx-top.jpg"
-            alt="Custom RTX build — top-down view"
-          />
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="../images/projects/custom-pc/build-2-rtx3080-detail.jpg"
-            alt="RTX 3080 Founders Edition with NZXT AIO and RGB RAM"
-          />
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="../images/projects/custom-pc/build-3-white-aio.jpg"
-            alt="White case build with NZXT liquid cooler and Gigabyte GPU"
-          />
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="../images/projects/custom-pc/build-4-cable-mgmt.jpg"
-            alt="Clean cable management on back panel of white build"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightbox-close">&times;</button>
-      <img src="" alt="" id="lightbox-img" />
-    </div>
-
-    <!-- Overview -->
-    <section class="project-content-section">
-      <div class="project-content-inner">
-        <h2>Overview</h2>
-        <p>
-          Founded and operate a custom PC building service, working with clients
-          to understand their needs and delivering builds tailored to their
-          budget and use case — gaming, video editing, workstations, and more.
-        </p>
-        <p>
-          Every build starts with a consultation, followed by component
-          sourcing, assembly, testing, and post-build support. The goal is
-          always a clean, reliable machine the client can actually use.
-        </p>
-
-        <h2>What I Do</h2>
-        <ul>
-          <li>Consult with clients on their needs and budget</li>
-          <li>
-            Source and compare components for the best price-to-performance
-          </li>
-          <li>Full assembly, cable management, and BIOS setup</li>
-          <li>OS installation and driver configuration</li>
-          <li>Ongoing support and upgrades after delivery</li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="project-footer-nav">
-      <a href="../index.html#projects">&#8592; Back to all projects</a>
-    </div>
-
-    <footer class="footer">
-      <p>Designed &amp; Built by Alyan Anwar</p>
-    </footer>
-
-    <script src="../script.js"></script>
+    <script src="../site.js"></script>
     <script src="../net.js" defer></script>
-    <script>
-      // Lightbox
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      document.querySelectorAll(".gallery-item img").forEach((img) => {
-        img.style.cursor = "zoom-in";
-        img.addEventListener("click", () => {
-          lightboxImg.src = img.src;
-          lightboxImg.alt = img.alt;
-          lightbox.classList.add("active");
-        });
-      });
-      document
-        .getElementById("lightbox-close")
-        .addEventListener("click", () => lightbox.classList.remove("active"));
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("active");
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") lightbox.classList.remove("active");
-      });
-    </script>
   </body>
 </html>

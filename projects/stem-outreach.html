@@ -3,154 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STEM Outreach — Alyan Anwar</title>
+    <title>STEM Outreach · Alyan</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
       rel="stylesheet"
     />
-    <meta name="theme-color" content="#0d0d0f" />
-    <!-- Theme boot: apply stored light theme before first paint (dark is default) -->
-    <script>
-      try {
-        if (localStorage.getItem("theme") === "light")
-          document.documentElement.setAttribute("data-theme", "light");
-      } catch (e) {}
-    </script>
-    <link rel="stylesheet" href="../style.css" />
+    <meta name="theme-color" content="#f4f2ee" />
+    <link rel="stylesheet" href="../site.css" />
   </head>
   <body>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="../index.html" class="nav-logo">~/alyan</a>
-      <div class="nav-links">
-        <a href="../index.html#work">Work</a>
-        <a href="../index.html#experience">Experience</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
-        <a
-          href="../resume.pdf"
-          target="_blank"
-          rel="noopener"
-          class="nav-resume-btn"
-          >Resume</a
-        >
-      </div>
-      <button
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Switch to light theme"
-        aria-pressed="false"
-      >
-        <svg
-          class="icon-sun"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-          />
-        </svg>
-        <svg
-          class="icon-moon"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      </button>
-    </nav>
-
-    <!-- Hero -->
-    <section class="project-page-hero">
-      <a href="../index.html#projects" class="back-link"
-        >&#8592; Back to Projects</a
-      >
-      <h1 class="project-page-title">STEM Outreach & Education</h1>
-      <p class="project-page-subtitle">
-        Hands-on hardware workshop for students in San Joaquin County, co-hosted
-        by Lawrence Livermore National Laboratory.
-      </p>
-      <div class="project-page-tags">
-        <span>Education</span>
-        <span>Hardware</span>
-        <span>Community</span>
-        <span>LLNL</span>
-      </div>
-    </section>
-
-    <!-- Overview -->
-    <section class="project-content-section">
-      <div class="project-content-inner">
-        <h2>Overview</h2>
-        <p>
-          <!-- Edit this text -->
-          In October 2024, I volunteered at the STEM San Joaquin conference
-          hosted at the University of the Pacific — a STEM outreach event
-          co-sponsored by Lawrence Livermore and Sandia National Laboratories
-          for students across San Joaquin County.
-        </p>
-        <p>
-          I worked alongside LLNL employees to lead a hands-on workshop where
-          students dismantled, identified, and rebuilt computer hardware from
-          scratch. The goal was to give them a real feel for what engineers do
-          and spark interest in STEM careers.
-        </p>
-
-        <h2>What We Did</h2>
-        <ul>
-          <!-- Edit this list -->
-          <li>
-            Guided students through identifying internal PC components (CPU,
-            RAM, GPU, PSU, etc.)
-          </li>
-          <li>Led the teardown and reassembly process step by step</li>
-          <li>
-            Answered questions and explained how hardware connects to software
-            and real-world systems
-          </li>
-          <li>Worked with LLNL staff to coordinate the workshop flow</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Documents -->
-    <section class="project-docs-section">
-      <p class="section-label">Documents</p>
-      <div class="docs-grid">
-        <p class="doc-placeholder">
-          Drop documents into docs/ and add links here.
-        </p>
-      </div>
-    </section>
-
-    <div class="project-footer-nav">
-      <a href="../index.html#projects">&#8592; Back to all projects</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true">
+      <div
+        class="backdrop-layer is-on"
+        style="background-image: url(../images/bg/forest-stream.jpg)"
+      ></div>
+      <div class="backdrop-layer"></div>
     </div>
 
-    <footer class="footer">
-      <p>Designed &amp; Built by Alyan Anwar</p>
-    </footer>
+    <div class="panel">
+      <header class="bar">
+        <a href="../index.html" class="bar-name">Alyan</a>
+        <nav class="bar-links" aria-label="Main navigation">
+          <a href="../index.html#work">Work</a>
+          <a class="bar-more" href="../index.html#experience">Experience</a>
+          <a class="bar-more" href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+          <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </header>
 
-    <script src="../script.js"></script>
+      <main id="main" class="sheet project">
+        <!-- Hero -->
+        <section class="project-page-hero">
+          <a href="../index.html#work" class="back-link">← All work</a>
+          <h1 class="project-page-title">STEM Outreach & Education</h1>
+          <p class="project-page-subtitle">
+            Hands-on hardware workshop for students in San Joaquin County,
+            co-hosted by Lawrence Livermore National Laboratory.
+          </p>
+          <div class="project-page-tags">
+            <span>Education</span>
+            <span>Hardware</span>
+            <span>Community</span>
+            <span>LLNL</span>
+          </div>
+        </section>
+        <figure class="project-cover">
+          <img
+            src="../images/files/stem-lg.jpg"
+            alt="Winslow Homer, Snap the Whip, 1872"
+            loading="eager"
+          />
+          <figcaption>
+            Winslow Homer, Snap the Whip, 1872. The Met, public domain.
+          </figcaption>
+        </figure>
+
+        <!-- Overview -->
+        <section class="project-content-section">
+          <div class="project-content-inner">
+          <div class="cs-row">
+            <h2>Overview</h2>
+            <div class="cs-body">
+            <p>
+              <!-- Edit this text -->
+              In October 2024, I volunteered at the STEM San Joaquin conference
+              hosted at the University of the Pacific, a STEM outreach event
+              co-sponsored by Lawrence Livermore and Sandia National
+              Laboratories for students across San Joaquin County.
+            </p>
+            <p>
+              I worked alongside LLNL employees to lead a hands-on workshop
+              where students dismantled, identified, and rebuilt computer
+              hardware from scratch. The goal was to give them a real feel for
+              what engineers do and spark interest in STEM careers.
+            </p>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>What We Did</h2>
+            <div class="cs-body">
+            <ul>
+              <!-- Edit this list -->
+              <li>
+                Guided students through identifying internal PC components (CPU,
+                RAM, GPU, PSU, etc.)
+              </li>
+              <li>Led the teardown and reassembly process step by step</li>
+              <li>
+                Answered questions and explained how hardware connects to
+                software and real-world systems
+              </li>
+              <li>Worked with LLNL staff to coordinate the workshop flow</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <div class="project-footer-nav">
+          <a href="../index.html#work">← All work</a>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>© 2026 Alyan Anwar</p>
+        <p>
+          <a
+            href="https://github.com/alyananwar/alyananwar.github.io"
+            target="_blank"
+            rel="noopener"
+            >Source</a
+          >
+          <a href="../privacy.html">Privacy</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="window window-end" data-bg="../images/bg/forest-stream.jpg">
+      <p class="credit">Jacob van Ruisdael, The Forest Stream, ca. 1660</p>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo">
+      <button type="button" class="lightbox-close" aria-label="Close">
+        Close
+      </button>
+      <img alt="" />
+      <p class="lightbox-cap"></p>
+    </dialog>
+
+    <script src="../site.js"></script>
     <script src="../net.js" defer></script>
   </body>
 </html>

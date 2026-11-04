@@ -12,9 +12,9 @@ I'm a Computer Science student at the University of the Pacific. This site has m
 
 ## What's in it
 
-- **Liquid-metal name** on the landing screen, a WebGL2 shader adapted from [paper-design/liquid-logo](https://github.com/paper-design/liquid-logo). If WebGL2 isn't available it falls back to a dot-matrix version.
-- **Light and dark themes** with a toggle.
-- **Project case studies** for TigerTrack, EasyReview, GiveLedger, CyberPartner, a network pentest, and more.
+- **A paper panel over old paintings.** Public-domain landscapes and seascapes from the Met's Open Access collection sit behind the page and crossfade as you scroll.
+- **A rotating file selector for projects.** Projects are 3D file cards on a slow-turning ring. Hover to pick one up, click to open it. Phones get a swipe row instead.
+- **Project case studies** for TigerTrack, CyberPartner, the AI Virtual Patient, EasyReview, bbagent, Pipeline, a network pentest, and more.
 - **"Connect with me" form** and visit tracking, backed by a small Cloudflare Worker I wrote (`net.js`, `connect.js`).
 
 ## Run it locally
@@ -29,10 +29,12 @@ Then open http://localhost:8000.
 
 ## Files
 
-| File | What it does |
-|---|---|
-| `index.html`, `style.css`, `script.js` | The main page, styles, scroll animations, and theme toggle |
-| `liquid-name.js` | WebGL name shader |
-| `net.js`, `connect.js` | Visit tracking and the contact form, both talk to the Worker |
-| `projects/` | One page per project |
-| `images/` | Screenshots and project photos |
+| File                   | What it does                                                   |
+| ---------------------- | -------------------------------------------------------------- |
+| `index.html`           | The main page                                                  |
+| `site.css`, `site.js`  | Styles for every page, the backdrop crossfade, the project ring |
+| `net.js`, `connect.js` | Visit tracking and the contact form, both talk to the Worker   |
+| `projects/`            | One page per project                                           |
+| `images/bg/`           | Public-domain paintings from the Met used as backgrounds       |
+| `images/files/`        | Project card images                                            |
+| `images/gallery/`      | Photography (gallery section stays hidden until it has photos)  |

@@ -3,110 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 · Alyan Anwar</title>
+    <title>Not found · Alyan</title>
     <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="theme-color" content="#0d0d0f" />
-    <!-- Theme boot: apply stored light theme before first paint (dark is default) -->
-    <script>
-      try {
-        if (localStorage.getItem("theme") === "light")
-          document.documentElement.setAttribute("data-theme", "light");
-      } catch (e) {}
-    </script>
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #0d0d0f;
-        --text: #ededea;
-        --text-2: #9c9b95;
-        --red: #ff5a47;
-        --blue: #6b83ff;
-        --on-ink: #0d0d0f;
-      }
-      [data-theme="light"] {
-        color-scheme: light;
-        --bg: #f2efe7;
-        --text: #1b1a14;
-        --text-2: #57544a;
-        --red: #e04329;
-        --blue: #3a53de;
-        --on-ink: #f2efe7;
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family:
-          "Inter",
-          -apple-system,
-          sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-      }
-      .error-code {
-        font-family: "JetBrains Mono", ui-monospace, monospace;
-        font-size: 0.8rem;
-        color: var(--red);
-        margin-bottom: 1rem;
-      }
-      h1 {
-        font-size: clamp(3rem, 10vw, 6rem);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        line-height: 1;
-        margin-bottom: 1rem;
-      }
-      .error-msg {
-        font-size: 1.05rem;
-        color: var(--text-2);
-        margin-bottom: 2.5rem;
-      }
-      .error-link {
-        display: inline-block;
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--on-ink);
-        background: var(--text);
-        padding: 0.75rem 1.75rem;
-        border-radius: 999px;
-        text-decoration: none;
-        transition:
-          transform 0.15s ease,
-          filter 0.15s ease;
-      }
-      .error-link:hover {
-        transform: translateY(-1px);
-        filter: brightness(1.08);
-      }
-      .error-link:focus-visible {
-        outline: 2px solid var(--blue);
-        outline-offset: 3px;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#f4f2ee" />
+    <link rel="stylesheet" href="/site.css" />
   </head>
   <body>
-    <p class="error-code">HTTP 404 · page_not_found</p>
-    <h1>Lost in the stack.</h1>
-    <p class="error-msg">
-      This page doesn't exist, but the rest of my site does.
-    </p>
-    <a href="/" class="error-link">Back home</a>
-    <script src="net.js" defer></script>
+    <div class="backdrop" aria-hidden="true">
+      <div class="backdrop-layer is-on" style="background-image: url(/images/bg/waterspout.jpg)"></div>
+    </div>
+    <div class="panel">
+      <main class="sheet project">
+        <p class="sheet-note">404</p>
+        <h1 class="project-page-title">Lost at sea</h1>
+        <p class="project-page-subtitle">This page doesn't exist, or it moved.</p>
+        <p class="project-page-links"><a href="/">Back to the site</a></p>
+      </main>
+    </div>
+    <script src="/net.js" defer></script>
   </body>
 </html>

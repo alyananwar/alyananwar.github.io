@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Virtual Patient · Alyan</title>
+    <meta
+      name="description"
+      content="Voice AI virtual patient prototype for dental students at the University of the Pacific."
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#f4f2ee" />
+    <link rel="stylesheet" href="../site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true">
+      <div
+        class="backdrop-layer is-on"
+        style="background-image: url(../images/bg/lake-george.jpg)"
+      ></div>
+      <div class="backdrop-layer"></div>
+    </div>
+
+    <div class="panel">
+      <header class="bar">
+        <a href="../index.html" class="bar-name">Alyan</a>
+        <nav class="bar-links" aria-label="Main navigation">
+          <a href="../index.html#work">Work</a>
+          <a class="bar-more" href="../index.html#experience">Experience</a>
+          <a class="bar-more" href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+          <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </header>
+
+      <main id="main" class="sheet project">
+        <section class="project-page-hero">
+          <a href="../index.html#work" class="back-link">← All work</a>
+          <h1 class="project-page-title">AI Virtual Patient</h1>
+          <p class="project-page-subtitle">
+            A voice AI patient for Dugoni School of Dentistry faculty. Dental
+            students interview a patient with a broken tooth, order tests, and
+            give a diagnosis.
+          </p>
+          <div class="project-page-tags">
+            <span>UOP AI Research</span>
+            <span>Web Speech API</span>
+            <span>Local LLM</span>
+            <span>Kokoro 82M</span>
+          </div>
+        </section>
+
+        <figure class="project-cover">
+          <img
+            src="../images/files/virtual-patient-lg.jpg"
+            alt="Virtual patient visit screen: chat with the patient, visit progress, and test results"
+            loading="eager"
+          />
+          <figcaption>
+            Working prototype with a made-up sample patient. Not faculty
+            reviewed yet.
+          </figcaption>
+        </figure>
+
+        <section class="project-content-section">
+          <div class="project-content-inner">
+          <div class="cs-row">
+            <h2>Overview</h2>
+            <div class="cs-body">
+            <p>
+              This is the faculty project I'm helping with through my AI
+              Research Assistant job at the University of the Pacific. Dental
+              school faculty asked for help building a chatbot that plays a
+              patient, so first and second year students can practice a full
+              patient conversation before they treat real people.
+            </p>
+            <p>
+              They wanted it voice first. Their reasoning was that the hardest
+              part for students is starting the conversation and working through
+              the decision tree.
+            </p>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>What I built</h2>
+            <div class="cs-body">
+            <p>A working local prototype, built at zero cost:</p>
+            <ul>
+              <li>Voice in through the browser's Web Speech API</li>
+              <li>Replies from a local LLM</li>
+              <li>Voice out through Kokoro 82M, about 4 seconds per reply</li>
+              <li>
+                Students take a history, run tests like an x-ray or a pulp test,
+                then pick a diagnosis and treatment
+              </li>
+              <li>
+                A faculty view that shows what the student asked, what they
+                missed, and whether their diagnosis matched the case
+              </li>
+            </ul>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>Where it's going</h2>
+            <div class="cs-body">
+            <p>
+              The faculty gave feedback after the first demo. They want a
+              virtual avatar, something every dental student can use, and maybe
+              Canvas integration. The cases are still being written by faculty,
+              so everything in the demo is sample data.
+            </p>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <div class="project-footer-nav">
+          <a href="../index.html#work">← All work</a>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>© 2026 Alyan Anwar</p>
+        <p>
+          <a
+            href="https://github.com/alyananwar/alyananwar.github.io"
+            target="_blank"
+            rel="noopener"
+            >Source</a
+          >
+          <a href="../privacy.html">Privacy</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="window window-end" data-bg="../images/bg/lake-george.jpg">
+      <p class="credit">John Frederick Kensett, Lake George, 1872</p>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo">
+      <button type="button" class="lightbox-close" aria-label="Close">
+        Close
+      </button>
+      <img alt="" />
+      <p class="lightbox-cap"></p>
+    </dialog>
+
+    <script src="../site.js"></script>
+    <script src="../net.js" defer></script>
+  </body>
+</html>

@@ -2,57 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://alyananwar.github.io/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/tigertrack.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/cyberpartner.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alyananwar.github.io/projects/virtual-patient.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/easyreview.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alyananwar.github.io/projects/bbagent.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alyananwar.github.io/projects/pipeline.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/pentest-ecpe178.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/giveledger.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.7</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alyananwar.github.io/projects/tigertrack-security.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alyananwar.github.io/projects/agentic-workflow.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/pihole.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/city-it.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/custom-pc.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/formula-sae.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://alyananwar.github.io/projects/stem-outreach.html</loc>
-    <lastmod>2026-07-01</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-11-04</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>

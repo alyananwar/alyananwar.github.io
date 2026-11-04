@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TigerTrack FERPA &amp; API Security Review · Alyan</title>
+    <meta
+      name="description"
+      content="Security and privacy review of TigerTrack&#x27;s DegreeWorks API proposal: OWASP API Top 10 and FERPA."
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#f4f2ee" />
+    <link rel="stylesheet" href="../site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true">
+      <div
+        class="backdrop-layer is-on"
+        style="background-image: url(../images/bg/northeaster.jpg)"
+      ></div>
+      <div class="backdrop-layer"></div>
+    </div>
+
+    <div class="panel">
+      <header class="bar">
+        <a href="../index.html" class="bar-name">Alyan</a>
+        <nav class="bar-links" aria-label="Main navigation">
+          <a href="../index.html#work">Work</a>
+          <a class="bar-more" href="../index.html#experience">Experience</a>
+          <a class="bar-more" href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+          <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </header>
+
+      <main id="main" class="sheet project">
+        <section class="project-page-hero">
+          <a href="../index.html#work" class="back-link">← All work</a>
+          <h1 class="project-page-title">
+            TigerTrack FERPA &amp; API Security Review
+          </h1>
+          <p class="project-page-subtitle">
+            The security and privacy section of TigerTrack's DegreeWorks API
+            proposal to University of the Pacific IT.
+          </p>
+          <div class="project-page-tags">
+            <span>FERPA</span>
+            <span>OWASP API Top 10</span>
+            <span>Data flow mapping</span>
+          </div>
+        </section>
+
+        <figure class="project-cover">
+          <img
+            src="../images/files/ferpa-lg.jpg"
+            alt="Camille Corot, The Letter, ca. 1865"
+            loading="eager"
+          />
+          <figcaption>
+            Camille Corot, The Letter, ca. 1865. The Met, public domain.
+          </figcaption>
+        </figure>
+
+        <section class="project-content-section">
+          <div class="project-content-inner">
+          <div class="cs-row">
+            <h2>Overview</h2>
+            <div class="cs-body">
+            <p>
+              Before TigerTrack can use real student data through the
+              DegreeWorks API, the university needs to know how that data is
+              handled. I wrote the security and privacy section of our proposal
+              to UOP IT.
+            </p>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>What I did</h2>
+            <div class="cs-body">
+            <ul>
+              <li>
+                Mapped how student data moves through TigerTrack, from
+                DegreeWorks to the app to the AI provider
+              </li>
+              <li>Scored our controls against the OWASP API Security Top 10</li>
+              <li>Checked the design against FERPA requirements</li>
+              <li>
+                Flagged that student GPA was being sent to an AI provider with
+                no data agreement in place
+              </li>
+            </ul>
+            </div>
+          </div>
+          <div class="cs-row">
+            <h2>Why it matters</h2>
+            <div class="cs-body">
+            <p>
+              Finding the GPA issue ourselves, before asking for real student
+              data, was the most important part. The fix is to strip identifying
+              data before any AI call.
+            </p>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <div class="project-footer-nav">
+          <a href="../index.html#work">← All work</a>
+        </div>
+      </main>
+
+      <footer class="foot">
+        <p>© 2026 Alyan Anwar</p>
+        <p>
+          <a
+            href="https://github.com/alyananwar/alyananwar.github.io"
+            target="_blank"
+            rel="noopener"
+            >Source</a
+          >
+          <a href="../privacy.html">Privacy</a>
+        </p>
+      </footer>
+    </div>
+
+    <div class="window window-end" data-bg="../images/bg/northeaster.jpg">
+      <p class="credit">Winslow Homer, Northeaster, 1895</p>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo">
+      <button type="button" class="lightbox-close" aria-label="Close">
+        Close
+      </button>
+      <img alt="" />
+      <p class="lightbox-cap"></p>
+    </dialog>
+
+    <script src="../site.js"></script>
+    <script src="../net.js" defer></script>
+  </body>
+</html>
